@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Link } from "react-router-dom";
 
-
+import './sidemenu.css';
 
 
 
@@ -13,36 +13,9 @@ const SideMenu = () => {
     setActiveMenu(itemName);
   };
 
-  //let content;
+  
 
-  {/*switch (activeMenu) {
-    case "dashboard":
-      content = <Dashboard />;
-      break;
-    case "profile":
-      content = <Profile />;
-      break;
-    case "resume":
-      content = <Resume />;
-      break;
-    case "messages":
-      content = <Messages />;
-      break;
-    case "jobAlert":
-      content = <JobAlert />;
-      break;
-    case "jobSaved":
-      content = <JobSaved />;
-      break;
-    case "settings":
-      content = <Settings />;
-      break;
-    case "delete":
-        content=<Delete/>;
-        break;  
-    default:
-      content = null;
-  }*/}
+  
 
   return (
     <div className="__variable_e76efa __variable_95782f">
@@ -144,7 +117,7 @@ const SideMenu = () => {
                   <li>
                     <a
                       className="dropdown-item d-flex align-items-center"
-                      href="#"
+                      //ref="#"
                     >
                       <img
                         alt="icon"
@@ -291,7 +264,7 @@ const SideMenu = () => {
                 <li className={activeMenu === "delete" ? "active" : ""}
                   onClick={() => handleMenuClick("delete")}>
                   <a
-                    href="#"
+                    //href="#"
                     className="d-flex w-100 align-items-center"
                     data-bs-toggle="modal"
                     data-bs-target="#deleteModal"
@@ -319,7 +292,7 @@ const SideMenu = () => {
               </div>
               <p>Profile Complete</p>
             </div>
-            <a href="#" className="d-flex w-100 align-items-center logout-btn">
+            <a /*href="#"*/ className="d-flex w-100 align-items-center logout-btn">
               <img
                 alt="icon"
                 loading="lazy"
