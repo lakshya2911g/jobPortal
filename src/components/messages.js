@@ -1,4 +1,5 @@
 import React from "react";
+import './messages.css';
 
 const Messages = () => {
   return (
@@ -59,7 +60,7 @@ const Messages = () => {
     </head>*/}
       <div className="__variable_e76efa __variable_95782f">
         <div className="main-page-wrapper">
-          <aside className="dash-aside-navbar">
+          {/*<aside className="dash-aside-navbar">
             <div className="position-relative">
               <div className="logo text-md-center d-md-block d-flex align-items-center justify-content-between">
                 <a href="../candidate-dashboard.html">
@@ -358,8 +359,8 @@ const Messages = () => {
                 <span>Logout</span>
               </a>
             </div>
-          </aside>
-          <div
+          </aside>*/}
+          {/*<div
             className="modal fade"
             id="deleteModal"
             tabindex="-1"
@@ -405,7 +406,7 @@ const Messages = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div>*/}
           <div className="dashboard-body">
             <div className="position-relative">
               <header className="dashboard-header">
@@ -425,7 +426,7 @@ const Messages = () => {
                         data-nimg="1"
                         className="lazy-img m-auto"
                         style={{color:"transparent"}}
-                        src="../../_next/static/media/icon_10.35c41a63.svg"
+                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_10.35c41a63.svg"
                       />
                     </button>
                   </form>
@@ -447,7 +448,7 @@ const Messages = () => {
                         data-nimg="1"
                         className="lazy-img"
                         style={{color:"transparent"}}
-                        src="../../_next/static/media/icon_11.32f89e94.svg"
+                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_11.32f89e94.svg"
                       />
                       <div className="badge-pill"></div>
                     </button>
@@ -555,7 +556,7 @@ const Messages = () => {
                         </a>
                       </div>
                       <div className="input-group d-flex align-items-center">
-                        <div className="text-center" style="width: 60px">
+                        <div className="text-center" style={{width: "60px"}}>
                           To
                         </div>
                         <input
@@ -566,7 +567,7 @@ const Messages = () => {
                       </div>
                       <div className="collapse" id="CC-input">
                         <div className="input-group d-flex align-items-center">
-                          <div className="text-center" style="width: 60px">
+                          <div className="text-center" style={{width: "60px"}}>
                             Cc
                           </div>
                           <input
@@ -578,7 +579,7 @@ const Messages = () => {
                       </div>
                       <div className="collapse" id="BCC-input">
                         <div className="input-group d-flex align-items-center">
-                          <div className="text-center" style="width: 60px">
+                          <div className="text-center" style={{width: "60px"}}>
                             Bcc
                           </div>
                           <input
@@ -703,7 +704,7 @@ const Messages = () => {
                         data-nimg="1"
                         className="lazy-img"
                         style={{color:"transparent"}}
-                        src="../../_next/static/media/icon_26.1a9ca54f.svg"
+                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_26.1a9ca54f.svg"
                       />
                     </a>
                     <div className="d-flex align-items-center">
@@ -725,7 +726,7 @@ const Messages = () => {
                         data-nimg="1"
                         className="lazy-img"
                         style={{color:"transparent"}}
-                        src="../../_next/static/media/icon_27.69de0fc6.svg"
+                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_27.69de0fc6.svg"
                       />
                     </a>
                   </div>
@@ -784,7 +785,7 @@ const Messages = () => {
                                 data-nimg="1"
                                 className="lazy-img m-auto"
                                 style={{color:"transparent"}}
-                                src="../../_next/static/media/icon_10.35c41a63.svg"
+                                src="https://jobi-nextjs.vercel.app/_next/static/media/icon_10.35c41a63.svg"
                               />
                             </button>
                           </form>
@@ -794,14 +795,14 @@ const Messages = () => {
                           >
                             <button className="filter_btn active">All</button>
                             <button className="filter_btn">
-                              <span style="background: #ff4545"></span> Read
+                              <span style={{background: "#ff4545"}}></span> Read
                             </button>
                             <button className="filter_btn">
-                              <span style="background: #3bda84"></span>
+                              <span style={{background: "#3bda84"}}></span>
                               Unread
                             </button>
                             <button className="filter_btn">
-                              <span style="background: #50c0ff"></span> Primary
+                              <span style={{background: "#50c0ff"}}></span> Primary
                             </button>
                           </div>
                         </div>
@@ -830,7 +831,7 @@ const Messages = () => {
                                     data-nimg="1"
                                     className="lazy-img me-2"
                                     style={{color:"transparent"}}
-                                    src="../../_next/static/media/icon_28.23ba7560.svg"
+                                    src="https://jobi-nextjs.vercel.app/_next/static/media/icon_28.23ba7560.svg"
                                   />
                                   <span>details.pdf</span>
                                 </div>
@@ -859,7 +860,7 @@ const Messages = () => {
                                     data-nimg="1"
                                     className="lazy-img me-2"
                                     style={{color:"transparent"}}
-                                    src="../../_next/static/media/icon_28.23ba7560.svg"
+                                    src="https://jobi-nextjs.vercel.app/_next/static/media/icon_28.23ba7560.svg"
                                   />
                                   <span>details.pdf</span>
                                 </div>
@@ -873,7 +874,7 @@ const Messages = () => {
                                     data-nimg="1"
                                     className="lazy-img me-2"
                                     style={{color:"transparent"}}
-                                    src="../../_next/static/media/icon_28.23ba7560.svg"
+                                    src="https://jobi-nextjs.vercel.app/_next/static/media/icon_28.23ba7560.svg"
                                   />
                                   <span>form.pdf</span>
                                 </div>
@@ -928,11 +929,11 @@ const Messages = () => {
                               data-nimg="1"
                               className="lazy-img logo"
                               style={{color:"transparent"}}
-                              srcset="
+                              /*srcset="
                             /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo_02.26817a33.png&amp;w=48&amp;q=75 1x,
                             /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo_02.26817a33.png&amp;w=96&amp;q=75 2x
-                          "
-                              src="../../_next/logo_02662b.png?url=%2F_next%2Fstatic%2Fmedia%2Flogo_02.26817a33.png&amp;w=96&amp;q=75"
+                          "*/
+                              src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo_02.26817a33.png&w=48&q=75"
                             />
                             <div className="ps-3">
                               <div className="sender-name">Payoneer</div>
@@ -954,7 +955,7 @@ const Messages = () => {
                                   data-nimg="1"
                                   className="lazy-img"
                                   style={{color:"transparent"}}
-                                  src="../../_next/static/media/icon_29.c4a2416d.svg"
+                                  src="https://jobi-nextjs.vercel.app/_next/static/media/icon_29.c4a2416d.svg"
                                 />
                               </button>
                               <button className="reply-email ms-3 me-3">
@@ -967,7 +968,7 @@ const Messages = () => {
                                   data-nimg="1"
                                   className="lazy-img"
                                   style={{color:"transparent"}}
-                                  src="../../_next/static/media/icon_30.088e4520.svg"
+                                  src="https://jobi-nextjs.vercel.app/_next/static/media/icon_30.088e4520.svg"
                                 />
                               </button>
                               <div className="action-dots float-end">
@@ -1059,7 +1060,7 @@ const Messages = () => {
                                       data-nimg="1"
                                       className="lazy-img"
                                       style={{color:"transparent"}}
-                                      src="../../_next/static/media/icon_31.ea86013e.svg"
+                                      src="https://jobi-nextjs.vercel.app/_next/static/media/icon_31.ea86013e.svg"
                                     />
                                   </div>
                                   <div className="ps-2">
@@ -1084,7 +1085,7 @@ const Messages = () => {
                                       data-nimg="1"
                                       className="lazy-img"
                                       style={{color:"transparent"}}
-                                      src="../../_next/static/media/icon_31.ea86013e.svg"
+                                      src="https://jobi-nextjs.vercel.app/_next/static/media/icon_31.ea86013e.svg"
                                     />
                                   </div>
                                   <div className="ps-2">
@@ -1119,7 +1120,7 @@ const Messages = () => {
                                 <div className="input-group d-flex align-items-center">
                                   <div
                                     className="text-center"
-                                    style="width: 60px"
+                                    style={{width: "60px"}}
                                   >
                                     To
                                   </div>
@@ -1133,7 +1134,7 @@ const Messages = () => {
                                   <div className="input-group d-flex align-items-center">
                                     <div
                                       className="text-center"
-                                      style="width: 60px"
+                                      style={{width: "60px"}}
                                     >
                                       Cc
                                     </div>
@@ -1148,7 +1149,7 @@ const Messages = () => {
                                   <div className="input-group d-flex align-items-center">
                                     <div
                                       className="text-center"
-                                      style="width: 60px"
+                                      style={{width: "60px"}}
                                     >
                                       Bcc
                                     </div>
@@ -1199,7 +1200,7 @@ const Messages = () => {
                                       data-nimg="1"
                                       className="lazy-img"
                                       style={{color:"transparent"}}
-                                      src="../../_next/static/media/icon_33.032d5ffc.svg"
+                                      src="https://jobi-nextjs.vercel.app/_next/static/media/icon_33.032d5ffc.svg"
                                     />
                                   </button>
                                   <div className="insert-file position-relative me-3">
@@ -1233,7 +1234,7 @@ const Messages = () => {
                                       data-nimg="1"
                                       className="lazy-img"
                                       style={{color:"transparent"}}
-                                      src="../../_next/static/media/icon_35.98f38e37.svg"
+                                      src="https://jobi-nextjs.vercel.app/_next/static/media/icon_35.98f38e37.svg"
                                     />
                                   </a>
                                   <a href="#" className="reply-btn tran3s">

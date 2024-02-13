@@ -19,31 +19,21 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
   return (
     
-    <Router>
+    
 
             <div className="App">
 
-            <SideMenu/>
-                
-
-            <Routes>
-
-                <Route path="/dashboard" component={Dashboard} />
-                <Route path="/profile" component={Profile} />
-                <Route path="/resume" component={Resume} />
-                <Route path="/messages" component={Messages} />
-                <Route path="/jobalert" component={JobAlert} />
-                <Route path="/jobsaved" component={JobSaved} />
-                <Route path="/settings" component={Settings}/>
-
-            </Routes>
+            <Dashboard/>
+            <Profile/>
+            <Resume/>
+            <Messages/>
 
                 
                 
 
             </div>
 
-    </Router>
+    
 
       
 

@@ -71,11 +71,11 @@ const Profile = () => {
                     decoding="async"
                     data-nimg="1"
                     style={{color:"transparent"}}
-                    srcSet="
+                    /*srcSet="
                   /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo_01.64e60fc1.png&amp;w=128&amp;q=75 1x,
                   /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo_01.64e60fc1.png&amp;w=256&amp;q=75 2x
-                "
-                    src="../../_next/logo_01ceed.png?url=%2F_next%2Fstatic%2Fmedia%2Flogo_01.64e60fc1.png&amp;w=256&amp;q=75"
+                "*/
+                    src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo_01.64e60fc1.png&w=128&q=75"
                   />
                 </a>
                 <button className="close-btn d-block d-md-none">
@@ -93,11 +93,11 @@ const Profile = () => {
                     data-nimg="1"
                     className="lazy-img"
                     style={{color: "transparent", height: "auto"}}
-                    srcSet="
+                    /*srcSet="
                   /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar_01.2651497f.jpg&amp;w=96&amp;q=75  1x,
                   /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar_01.2651497f.jpg&amp;w=256&amp;q=75 2x
-                "
-                    src="../../_next/avatar_01bdd1.jpg?url=%2F_next%2Fstatic%2Fmedia%2Favatar_01.2651497f.jpg&amp;w=256&amp;q=75"
+                "*/
+                    src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar_01.2651497f.jpg&w=96&q=75"
                   />
                 </div>
                 <div className="user-name-data">
@@ -129,7 +129,7 @@ const Profile = () => {
                           data-nimg="1"
                           className="lazy-img"
                           style={{color:"transparent"}}
-                          src="../../_next/static/media/icon_23.569a9456.svg"
+                          src="https://jobi-nextjs.vercel.app/_next/static/media/icon_23.569a9456.svg"
                         />
                         <span className="ms-2 ps-1">Profile</span>
                       </a>
@@ -148,7 +148,7 @@ const Profile = () => {
                           data-nimg="1"
                           className="lazy-img"
                           style={{color:"transparent"}}
-                          src="../../_next/static/media/icon_24.0ace9f1a.svg"
+                          src="https://jobi-nextjs.vercel.app/_next/static/media/icon_24.0ace9f1a.svg"
                         />
                         <span className="ms-2 ps-1">Account Settings</span>
                       </a>
@@ -167,7 +167,7 @@ const Profile = () => {
                           data-nimg="1"
                           className="lazy-img"
                           style={{color:"transparent"}}
-                          src="../../_next/static/media/icon_25.b0559e8f.svg"
+                          src="https://jobi-nextjs.vercel.app/_next/static/media/icon_25.b0559e8f.svg"
                         />
                         <span className="ms-2 ps-1">Notification</span>
                       </a>
@@ -191,7 +191,7 @@ const Profile = () => {
                         data-nimg="1"
                         className="lazy-img"
                         style={{color:"transparent"}}
-                        src="../../_next/static/media/icon_1.2012e511.svg"
+                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_1.2012e511.svg"
                       />
                       <span>Dashboard</span>
                     </a>
@@ -210,7 +210,7 @@ const Profile = () => {
                         data-nimg="1"
                         className="lazy-img"
                         style={{color:"transparent"}}
-                        src="../../_next/static/media/icon_2_active.6f51fbfa.svg"
+                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_2_active.6f51fbfa.svg"
                       />
                       <span>My Profile</span>
                     </a>
@@ -229,7 +229,7 @@ const Profile = () => {
                         data-nimg="1"
                         className="lazy-img"
                         style={{color:"transparent"}}
-                        src="../../_next/static/media/icon_3.1dfe15d1.svg"
+                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_3.1dfe15d1.svg"
                       />
                       <span>Resume</span>
                     </a>
@@ -248,7 +248,7 @@ const Profile = () => {
                         data-nimg="1"
                         className="lazy-img"
                         style={{color:"transparent"}}
-                        src="../../_next/static/media/icon_4.7fb6e150.svg"
+                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_4.7fb6e150.svg"
                       />
                       <span>Messages</span>
                     </a>
@@ -267,7 +267,7 @@ const Profile = () => {
                         data-nimg="1"
                         className="lazy-img"
                         style={{color:"transparent"}}
-                        src="../../_next/static/media/icon_5.7bc7faef.svg"
+                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_5.7bc7faef.svg"
                       />
                       <span>Job Alert</span>
                     </a>
@@ -286,7 +286,7 @@ const Profile = () => {
                         data-nimg="1"
                         className="lazy-img"
                         style={{color:"transparent"}}
-                        src="../../_next/static/media/icon_6.70ec5244.svg"
+                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_6.70ec5244.svg"
                       />
                       <span>Saved Job</span>
                     </a>
@@ -305,7 +305,7 @@ const Profile = () => {
                         data-nimg="1"
                         className="lazy-img"
                         style={{color:"transparent"}}
-                        src="../../_next/static/media/icon_7.9db14e45.svg"
+                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_7.9db14e45.svg"
                       />
                       <span>Account Settings</span>
                     </a>
@@ -326,7 +326,7 @@ const Profile = () => {
                         data-nimg="1"
                         className="lazy-img"
                         style={{color:"transparent"}}
-                        src="../../_next/static/media/icon_8.1d18804d.svg"
+                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_8.1d18804d.svg"
                       />
                       <span>Delete Account</span>
                     </a>
@@ -353,7 +353,7 @@ const Profile = () => {
                   data-nimg="1"
                   className="lazy-img"
                   style={{color:"transparent"}}
-                  src="../../_next/static/media/icon_9.69f19313.svg"
+                  src="https://jobi-nextjs.vercel.app/_next/static/media/icon_9.69f19313.svg"
                 />
                 <span>Logout</span>
               </a>
@@ -425,7 +425,7 @@ const Profile = () => {
                         data-nimg="1"
                         className="lazy-img m-auto"
                         style={{color:"transparent"}}
-                        src="../../_next/static/media/icon_10.35c41a63.svg"
+                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_10.35c41a63.svg"
                       />
                     </button>
                   </form>
@@ -447,7 +447,7 @@ const Profile = () => {
                         data-nimg="1"
                         className="lazy-img"
                         style={{color:"transparent"}}
-                        src="../../_next/static/media/icon_11.32f89e94.svg"
+                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_11.32f89e94.svg"
                       />
                       <div className="badge-pill"></div>
                     </button>
@@ -468,7 +468,7 @@ const Profile = () => {
                               data-nimg="1"
                               className="lazy-img icon"
                               style={{color:"transparent"}}
-                              src="../../_next/static/media/icon_36.d044b698.svg"
+                              src="https://jobi-nextjs.vercel.app/_next/static/media/icon_36.d044b698.svg"
                             />
                             <div className="flex-fill ps-2">
                               <h6>You have 3 new mails</h6>
@@ -485,7 +485,7 @@ const Profile = () => {
                               data-nimg="1"
                               className="lazy-img icon"
                               style={{color:"transparent"}}
-                              src="../../_next/static/media/icon_37.34c12156.svg"
+                              src="https://jobi-nextjs.vercel.app/_next/static/media/icon_37.34c12156.svg"
                             />
                             <div className="flex-fill ps-2">
                               <h6>You have 5 new mails</h6>
@@ -502,7 +502,7 @@ const Profile = () => {
                               data-nimg="1"
                               className="lazy-img icon"
                               style={{color:"transparent"}}
-                              src="../../_next/static/media/icon_38.2db06cc7.svg"
+                              src="https://jobi-nextjs.vercel.app/_next/static/media/icon_38.2db06cc7.svg"
                             />
                             <div className="flex-fill ps-2">
                               <h6>You have 7 new mails</h6>
@@ -535,11 +535,11 @@ const Profile = () => {
                     data-nimg="1"
                     className="lazy-img user-img"
                     style={{color:"transparent"}}
-                    srcset="
+                    /*srcset="
                   /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar_02.9163fcfc.jpg&amp;w=96&amp;q=75  1x,
                   /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar_02.9163fcfc.jpg&amp;w=256&amp;q=75 2x
-                "
-                    src="../../_next/avatar_028f2a.jpg?url=%2F_next%2Fstatic%2Fmedia%2Favatar_02.9163fcfc.jpg&amp;w=256&amp;q=75"
+                "*/
+                    src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar_02.9163fcfc.jpg&w=96&q=75"
                   />
                   <div className="upload-btn position-relative tran3s ms-4 me-3">
                     Upload new photo

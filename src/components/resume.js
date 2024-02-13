@@ -1,4 +1,5 @@
 import React from "react";
+import './resume.css';
 
 const Resume = () => {
   return (
@@ -58,13 +59,13 @@ const Resume = () => {
   </head>*/}
       <div className="__variable_e76efa __variable_95782f">
         <div className="main-page-wrapper">
-          <aside className="dash-aside-navbar">
+          {/*<aside className="dash-aside-navbar">
             <div className="position-relative">
               <div className="logo text-md-center d-md-block d-flex align-items-center justify-content-between">
                 <a href="../candidate-dashboard.html">
                   <img
                     alt="logo"
-                    fetchPriority="high"
+                    fetchpriority="high"
                     width="119"
                     height="42"
                     decoding="async"
@@ -91,7 +92,7 @@ const Resume = () => {
                     decoding="async"
                     data-nimg="1"
                     className="lazy-img"
-                    style="color: transparent; height: auto"
+                    style={{color: "transparent", height: "auto"}}
                     srcset="
                   /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar_01.2651497f.jpg&amp;w=96&amp;q=75  1x,
                   /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar_01.2651497f.jpg&amp;w=256&amp;q=75 2x
@@ -335,7 +336,7 @@ const Resume = () => {
               <div className="profile-complete-status">
                 <div className="progress-value fw-500">87%</div>
                 <div className="progress-line position-relative">
-                  <div className="inner-line" style="width: 80%"></div>
+                  <div className="inner-line" style={{width: "80%"}}></div>
                 </div>
                 <p>Profile Complete</p>
               </div>
@@ -357,8 +358,8 @@ const Resume = () => {
                 <span>Logout</span>
               </a>
             </div>
-          </aside>
-          <div
+          </aside>*/}
+          {/*<div
             className="modal fade"
             id="deleteModal"
             tabindex="-1"
@@ -404,7 +405,7 @@ const Resume = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div>*/}
           <div className="dashboard-body">
             <div className="position-relative">
               <header className="dashboard-header">
@@ -424,7 +425,7 @@ const Resume = () => {
                         data-nimg="1"
                         className="lazy-img m-auto"
                         style={{color:"transparent"}}
-                        src="../../_next/static/media/icon_10.35c41a63.svg"
+                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_10.35c41a63.svg"
                       />
                     </button>
                   </form>
@@ -446,7 +447,7 @@ const Resume = () => {
                         data-nimg="1"
                         className="lazy-img"
                         style={{color:"transparent"}}
-                        src="../../_next/static/media/icon_11.32f89e94.svg"
+                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_11.32f89e94.svg"
                       />
                       <div className="badge-pill"></div>
                     </button>
@@ -567,13 +568,11 @@ const Resume = () => {
                   <div className="col-sm-6 d-flex">
                     <div
                       className="intro-video-post position-relative mt-20"
-                      style="
-                    background-image: url(../../_next/static/media/video_post.1da3537c.jpg);
-                  "
+                      style={{backgroundImage: "url(../../_next/static/media/video_post.1da3537c.jpg);"}}
                     >
                       <a
                         className="fancybox rounded-circle video-icon tran3s text-center"
-                        style="cursor: pointer"
+                        style={{cursor: "pointer"}}
                       >
                         <i className="bi bi-play"></i>
                       </a>
@@ -1247,12 +1246,12 @@ const Resume = () => {
                           decoding="async"
                           data-nimg="1"
                           className="lazy-img w-100"
-                          style="color: transparent; width: 100%; height: auto"
-                          srcset="
+                          style={{color: "transparent", width: "100%", height: "auto"}}
+                          /*srcset="
                         /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio_img_01.51b89224.jpg&amp;w=256&amp;q=75 1x,
                         /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio_img_01.51b89224.jpg&amp;w=640&amp;q=75 2x
-                      "
-                          src="../../_next/portfolio_img_01144e.jpg?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio_img_01.51b89224.jpg&amp;w=640&amp;q=75"
+                      "*/
+                          src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio_img_01.51b89224.jpg&w=256&q=75"
                         />
                       </a>
                       <a
@@ -1274,12 +1273,12 @@ const Resume = () => {
                           decoding="async"
                           data-nimg="1"
                           className="lazy-img w-100"
-                          style="color: transparent; width: 100%; height: auto"
-                          srcset="
+                          style={{color: "transparent",width: "100%", height: "auto"}}
+                          /*srcset="
                         /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio_img_02.c2c3deb6.jpg&amp;w=256&amp;q=75 1x,
                         /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio_img_02.c2c3deb6.jpg&amp;w=640&amp;q=75 2x
-                      "
-                          src="../../_next/portfolio_img_0247e6.jpg?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio_img_02.c2c3deb6.jpg&amp;w=640&amp;q=75"
+                      "*/
+                          src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio_img_02.c2c3deb6.jpg&w=256&q=75"
                         />
                       </a>
                       <a
@@ -1301,12 +1300,12 @@ const Resume = () => {
                           decoding="async"
                           data-nimg="1"
                           className="lazy-img w-100"
-                          style="color: transparent; width: 100%; height: auto"
-                          srcset="
+                          style={{color: "transparent", width: "100%", height: "auto"}}
+                          /*srcset="
                         /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio_img_03.7122543e.jpg&amp;w=256&amp;q=75 1x,
                         /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio_img_03.7122543e.jpg&amp;w=640&amp;q=75 2x
-                      "
-                          src="../../_next/portfolio_img_03a4df.jpg?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio_img_03.7122543e.jpg&amp;w=640&amp;q=75"
+                      "*/
+                          src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio_img_03.7122543e.jpg&w=256&q=75"
                         />
                       </a>
                       <a
@@ -1328,12 +1327,12 @@ const Resume = () => {
                           decoding="async"
                           data-nimg="1"
                           className="lazy-img w-100"
-                          style="color: transparent; width: 100%; height: auto"
-                          srcset="
+                          style={{color: "transparent", width: "100%", height: "auto"}}
+                          /*srcset="
                         /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio_img_04.87505894.jpg&amp;w=256&amp;q=75 1x,
                         /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio_img_04.87505894.jpg&amp;w=640&amp;q=75 2x
-                      "
-                          src="../../_next/portfolio_img_04d786.jpg?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio_img_04.87505894.jpg&amp;w=640&amp;q=75"
+                      "*/
+                          src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fportfolio_img_04.87505894.jpg&w=256&q=75"
                         />
                       </a>
                       <a

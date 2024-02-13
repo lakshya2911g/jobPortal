@@ -68,9 +68,9 @@ button {
   text-transform: none;
 }
 [type="button"],
-/*button {
+button {
   -webkit-appearance: button;
-}*/
+}
 [type="button"]:not(:disabled),
 button:not(:disabled) {
   cursor: pointer;
