@@ -27,6 +27,9 @@ function App() {
             <Profile/>
             <Resume/>
             <Messages/>
+            <JobAlert/>
+            <JobSaved/>
+            <Settings/>
 
                 
                 

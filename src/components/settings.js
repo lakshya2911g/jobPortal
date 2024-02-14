@@ -1,4 +1,5 @@
 import React from "react";
+import './settings.css';
 
 const Settings = () => {
   return (
@@ -58,7 +59,7 @@ const Settings = () => {
   </head>*/}
       <div className="__variable_e76efa __variable_95782f">
         <div className="main-page-wrapper">
-          <aside className="dash-aside-navbar">
+          {/*<aside className="dash-aside-navbar">
             <div className="position-relative">
               <div className="logo text-md-center d-md-block d-flex align-items-center justify-content-between">
                 <a href="../candidate-dashboard.html">
@@ -357,8 +358,8 @@ const Settings = () => {
                 <span>Logout</span>
               </a>
             </div>
-          </aside>
-          <div
+          </aside>*/}
+          {/*<div
             className="modal fade"
             id="deleteModal"
             tabindex="-1"
@@ -404,7 +405,7 @@ const Settings = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div>*/}
           <div className="dashboard-body">
             <div className="position-relative">
               <header className="dashboard-header">
@@ -424,7 +425,7 @@ const Settings = () => {
                         data-nimg="1"
                         className="lazy-img m-auto"
                         style={{color:"transparent"}}
-                        src="../../_next/static/media/icon_10.35c41a63.svg"
+                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_10.35c41a63.svg"
                       />
                     </button>
                   </form>
@@ -446,7 +447,7 @@ const Settings = () => {
                         data-nimg="1"
                         className="lazy-img"
                         style={{color:"transparent"}}
-                        src="../../_next/static/media/icon_11.32f89e94.svg"
+                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_11.32f89e94.svg"
                       />
                       <div className="badge-pill"></div>
                     </button>

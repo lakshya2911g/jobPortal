@@ -1,4 +1,5 @@
 import React from "react";
+import './jobsaved.css';
 
 const JobSaved = () => {
   return (
@@ -58,7 +59,7 @@ const JobSaved = () => {
   </head>*/}
       <div className="__variable_e76efa __variable_95782f">
         <div className="main-page-wrapper">
-          <aside className="dash-aside-navbar">
+          {/*<aside className="dash-aside-navbar">
             <div className="position-relative">
               <div className="logo text-md-center d-md-block d-flex align-items-center justify-content-between">
                 <a href="../candidate-dashboard.html">
@@ -357,8 +358,8 @@ const JobSaved = () => {
                 <span>Logout</span>
               </a>
             </div>
-          </aside>
-          <div
+          </aside>*/}
+          {/*<div
             className="modal fade"
             id="deleteModal"
             tabindex="-1"
@@ -404,7 +405,7 @@ const JobSaved = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div>*/}
           <div className="dashboard-body">
             <div className="position-relative">
               <header className="dashboard-header">
@@ -424,7 +425,7 @@ const JobSaved = () => {
                         data-nimg="1"
                         className="lazy-img m-auto"
                         style={{color:"transparent"}}
-                        src="../../_next/static/media/icon_10.35c41a63.svg"
+                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_10.35c41a63.svg"
                       />
                     </button>
                   </form>
@@ -446,7 +447,7 @@ const JobSaved = () => {
                         data-nimg="1"
                         className="lazy-img"
                         style={{color:"transparent"}}
-                        src="../../_next/static/media/icon_11.32f89e94.svg"
+                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_11.32f89e94.svg"
                       />
                       <div className="badge-pill"></div>
                     </button>
@@ -569,11 +570,11 @@ const JobSaved = () => {
                             data-nimg="1"
                             className="lazy-img m-auto"
                             style={{color:"transparent"}}
-                            srcset="
+                            /*srcset="
                           /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_61.b310a81c.png&amp;w=64&amp;q=75  1x,
                           /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_61.b310a81c.png&amp;w=128&amp;q=75 2x
-                        "
-                            src="../../_next/media_61a7c1.png?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_61.b310a81c.png&amp;w=128&amp;q=75"
+                        "*/
+                            src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_22.142b36c3.png&w=64&q=75"
                           />
                         </a>
                         <a href="#" className="title fw-500 tran3s">
@@ -624,7 +625,7 @@ const JobSaved = () => {
                                 data-nimg="1"
                                 className="lazy-img"
                                 style={{color:"transparent"}}
-                                src="../../_next/static/media/icon_18.0f7046f3.svg"
+                                src="https://jobi-nextjs.vercel.app/_next/static/media/icon_18.0f7046f3.svg"
                               />
                               View
                             </a>
@@ -640,7 +641,7 @@ const JobSaved = () => {
                                 data-nimg="1"
                                 className="lazy-img"
                                 style={{color:"transparent"}}
-                                src="../../_next/static/media/icon_19.b2f1576b.svg"
+                                src="https://jobi-nextjs.vercel.app/_next/static/media/icon_19.b2f1576b.svg"
                               />
                               Share
                             </a>
@@ -656,7 +657,7 @@ const JobSaved = () => {
                                 data-nimg="1"
                                 className="lazy-img"
                                 style={{color:"transparent"}}
-                                src="../../_next/static/media/icon_20.e619462a.svg"
+                                src="https://jobi-nextjs.vercel.app/_next/static/media/icon_20.e619462a.svg"
                               />
                               Edit
                             </a>
@@ -672,7 +673,7 @@ const JobSaved = () => {
                                 data-nimg="1"
                                 className="lazy-img"
                                 style={{color:"transparent"}}
-                                src="../../_next/static/media/icon_21.1bede725.svg"
+                                src="https://jobi-nextjs.vercel.app/_next/static/media/icon_21.1bede725.svg"
                               />
                               Delete
                             </a>
@@ -696,11 +697,11 @@ const JobSaved = () => {
                             data-nimg="1"
                             className="lazy-img m-auto"
                             style={{color:"transparent"}}
-                            srcset="
+                            /*srcset="
                           /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_60.fc342855.png&amp;w=64&amp;q=75  1x,
                           /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_60.fc342855.png&amp;w=128&amp;q=75 2x
-                        "
-                            src="../../_next/media_604357.png?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_60.fc342855.png&amp;w=128&amp;q=75"
+                        "*/
+                            src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_23.20c2dd37.png&w=64&q=75"
                           />
                         </a>
                         <a href="#" className="title fw-500 tran3s">
@@ -751,7 +752,7 @@ const JobSaved = () => {
                                 data-nimg="1"
                                 className="lazy-img"
                                 style={{color:"transparent"}}
-                                src="../../_next/static/media/icon_18.0f7046f3.svg"
+                                src="https://jobi-nextjs.vercel.app/_next/static/media/icon_18.0f7046f3.svg"
                               />
                               View
                             </a>
@@ -767,7 +768,7 @@ const JobSaved = () => {
                                 data-nimg="1"
                                 className="lazy-img"
                                 style={{color:"transparent"}}
-                                src="../../_next/static/media/icon_19.b2f1576b.svg"
+                                src="https://jobi-nextjs.vercel.app/_next/static/media/icon_19.b2f1576b.svg"
                               />
                               Share
                             </a>
@@ -783,7 +784,7 @@ const JobSaved = () => {
                                 data-nimg="1"
                                 className="lazy-img"
                                 style={{color:"transparent"}}
-                                src="../../_next/static/media/icon_20.e619462a.svg"
+                                src="https://jobi-nextjs.vercel.app/_next/static/media/icon_20.e619462a.svg"
                               />
                               Edit
                             </a>
@@ -799,7 +800,7 @@ const JobSaved = () => {
                                 data-nimg="1"
                                 className="lazy-img"
                                 style={{color:"transparent"}}
-                                src="../../_next/static/media/icon_21.1bede725.svg"
+                                src="https://jobi-nextjs.vercel.app/_next/static/media/icon_21.1bede725.svg"
                               />
                               Delete
                             </a>
@@ -823,11 +824,11 @@ const JobSaved = () => {
                             data-nimg="1"
                             className="lazy-img m-auto"
                             style={{color:"transparent"}}
-                            srcset="
+                            /*srcset="
                           /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_59.4deaf874.png&amp;w=64&amp;q=75  1x,
                           /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_59.4deaf874.png&amp;w=128&amp;q=75 2x
-                        "
-                            src="../../_next/media_598955.png?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_59.4deaf874.png&amp;w=128&amp;q=75"
+                        "*/
+                            src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_24.cfe1701c.png&w=64&q=75"
                           />
                         </a>
                         <a href="#" className="title fw-500 tran3s">
@@ -878,7 +879,7 @@ const JobSaved = () => {
                                 data-nimg="1"
                                 className="lazy-img"
                                 style={{color:"transparent"}}
-                                src="../../_next/static/media/icon_18.0f7046f3.svg"
+                                src="https://jobi-nextjs.vercel.app/_next/static/media/icon_18.0f7046f3.svg"
                               />
                               View
                             </a>
@@ -894,7 +895,7 @@ const JobSaved = () => {
                                 data-nimg="1"
                                 className="lazy-img"
                                 style={{color:"transparent"}}
-                                src="../../_next/static/media/icon_19.b2f1576b.svg"
+                                src=".https://jobi-nextjs.vercel.app/_next/static/media/icon_19.b2f1576b.svg"
                               />
                               Share
                             </a>
@@ -910,7 +911,7 @@ const JobSaved = () => {
                                 data-nimg="1"
                                 className="lazy-img"
                                 style={{color:"transparent"}}
-                                src="../../_next/static/media/icon_20.e619462a.svg"
+                                src="https://jobi-nextjs.vercel.app/_next/static/media/icon_20.e619462a.svg"
                               />
                               Edit
                             </a>
@@ -926,7 +927,7 @@ const JobSaved = () => {
                                 data-nimg="1"
                                 className="lazy-img"
                                 style={{color:"transparent"}}
-                                src="../../_next/static/media/icon_21.1bede725.svg"
+                                src="https://jobi-nextjs.vercel.app/_next/static/media/icon_21.1bede725.svg"
                               />
                               Delete
                             </a>
@@ -950,11 +951,11 @@ const JobSaved = () => {
                             data-nimg="1"
                             className="lazy-img m-auto"
                             style={{color:"transparent"}}
-                            srcset="
+                            /*srcset="
                           /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_58.3df6f969.png&amp;w=64&amp;q=75  1x,
                           /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_58.3df6f969.png&amp;w=128&amp;q=75 2x
-                        "
-                            src="../../_next/media_586bee.png?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_58.3df6f969.png&amp;w=128&amp;q=75"
+                        "*/
+                            src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_25.7b6a766b.png&w=64&q=75"
                           />
                         </a>
                         <a href="#" className="title fw-500 tran3s">
@@ -1005,7 +1006,7 @@ const JobSaved = () => {
                                 data-nimg="1"
                                 className="lazy-img"
                                 style={{color:"transparent"}}
-                                src="../../_next/static/media/icon_18.0f7046f3.svg"
+                                src="https://jobi-nextjs.vercel.app/_next/static/media/icon_18.0f7046f3.svg"
                               />
                               View
                             </a>
@@ -1021,7 +1022,7 @@ const JobSaved = () => {
                                 data-nimg="1"
                                 className="lazy-img"
                                 style={{color:"transparent"}}
-                                src="../../_next/static/media/icon_19.b2f1576b.svg"
+                                src="https://jobi-nextjs.vercel.app/_next/static/media/icon_19.b2f1576b.svg"
                               />
                               Share
                             </a>
@@ -1037,7 +1038,7 @@ const JobSaved = () => {
                                 data-nimg="1"
                                 className="lazy-img"
                                 style={{color:"transparent"}}
-                                src="../../_next/static/media/icon_20.e619462a.svg"
+                                src="https://jobi-nextjs.vercel.app/_next/static/media/icon_20.e619462a.svg"
                               />
                               Edit
                             </a>
@@ -1053,7 +1054,7 @@ const JobSaved = () => {
                                 data-nimg="1"
                                 className="lazy-img"
                                 style={{color:"transparent"}}
-                                src="../../_next/static/media/icon_21.1bede725.svg"
+                                src="https://jobi-nextjs.vercel.app/_next/static/media/icon_21.1bede725.svg"
                               />
                               Delete
                             </a>
