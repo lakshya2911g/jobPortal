@@ -174,7 +174,7 @@ const SideMenu = () => {
                       style={{ color: "transparent" }}
                       src="https://jobi-nextjs.vercel.app/_next/static/media/icon_2.bb2a8c78.svg"
                     />
-                    <Link to="/profile">My Profile</Link>
+                    <Link to="/myProfile">My Profile</Link>
                  
                 </li>
                 <li className={activeMenu === "resume" ? "active" : ""}
@@ -241,7 +241,7 @@ const SideMenu = () => {
                       style={{ color: "transparent" }}
                       src="https://jobi-nextjs.vercel.app/_next/static/media/icon_6.70ec5244.svg"
                     />
-                    <Link to="/jobsaved"><span>Job Saved</span></Link>
+                    <Link to="/svedJob"><span>Job Saved</span></Link>
                   
                 </li>
                 <li className={activeMenu === "settings" ? "active" : ""}
@@ -258,7 +258,7 @@ const SideMenu = () => {
                       style={{ color: "transparent" }}
                       src="https://jobi-nextjs.vercel.app/_next/static/media/icon_7.9db14e45.svg"
                     />
-                    <Link to="/settings"><span>Account Settings</span></Link>
+                    <Link to="/accountSettings"><span>Account Settings</span></Link>
                   
                 </li>
                 <li className={activeMenu === "delete" ? "active" : ""}

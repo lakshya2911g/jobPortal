@@ -11,6 +11,7 @@ import JobSaved from './components/jobSaved';
 
 import Settings from './components/settings';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Delete from './components/delete';
 //import Dashboard from './components/dashboard';
 //import Profile from './components/profile';
 
@@ -18,24 +19,29 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
+
+    <>
+
+    <Router>
+      <SideMenu/>
+      <Routes>
+
+        <Route path='/dashboard' Component={Dashboard}/>
+        <Route path='/myProfile'  Component={Profile} />
+        <Route path='/resume' Component={Resume}/>
+        <Route path='/messages' Component={Messages}/>
+        <Route path='/jobAlert' Component={JobAlert}/>
+        <Route path='/svedJob' Component={JobSaved}/>
+        <Route path='/accountSettings' Component={Settings}/>
+        <Route path='/delete' Component={Delete}/>
+
+      </Routes>
+    </Router>
     
     
 
-            <div className="App">
-
-            <Dashboard/>
-            <Profile/>
-            <Resume/>
-            <Messages/>
-            <JobAlert/>
-            <JobSaved/>
-            <Settings/>
-
-                
-                
-
-            </div>
-
+            
+    </>
     
 
       
