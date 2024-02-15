@@ -59,7 +59,7 @@ const Profile = () => {
   </head>*/}
       <div className="__variable_e76efa __variable_95782f">
         <div className="main-page-wrapper">
-          <aside className="dash-aside-navbar">
+          {/*<aside className="dash-aside-navbar">
             <div className="position-relative">
               <div className="logo text-md-center d-md-block d-flex align-items-center justify-content-between">
                 <a href="../candidate-dashboard.html">
@@ -71,10 +71,10 @@ const Profile = () => {
                     decoding="async"
                     data-nimg="1"
                     style={{color:"transparent"}}
-                    /*srcSet="
+                    srcSet="
                   /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo_01.64e60fc1.png&amp;w=128&amp;q=75 1x,
                   /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo_01.64e60fc1.png&amp;w=256&amp;q=75 2x
-                "*/
+                "
                     src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo_01.64e60fc1.png&w=128&q=75"
                   />
                 </a>
@@ -93,10 +93,10 @@ const Profile = () => {
                     data-nimg="1"
                     className="lazy-img"
                     style={{color: "transparent", height: "auto"}}
-                    /*srcSet="
+                    srcSet="
                   /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar_01.2651497f.jpg&amp;w=96&amp;q=75  1x,
                   /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar_01.2651497f.jpg&amp;w=256&amp;q=75 2x
-                "*/
+                "
                     src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Favatar_01.2651497f.jpg&w=96&q=75"
                   />
                 </div>
@@ -358,8 +358,8 @@ const Profile = () => {
                 <span>Logout</span>
               </a>
             </div>
-          </aside>
-          <div
+          </aside>*/}
+          {/*<div
             className="modal fade"
             id="deleteModal"
             tabindex="-1"
@@ -405,7 +405,7 @@ const Profile = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div>*/}
           <div className="dashboard-body">
             <div className="position-relative">
               <header className="dashboard-header">

@@ -23,7 +23,7 @@ const SideMenu = () => {
         <aside className="dash-aside-navbar">
           <div className="position-relative">
             <div className="logo text-md-center d-md-block d-flex align-items-center justify-content-between">
-              <a href="candidate-dashboard.html">
+              <Link to="dashboard">
                 <img
                   alt="logo"
                   fetchpriority="high"
@@ -38,7 +38,7 @@ const SideMenu = () => {
                   "*/
                   src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo_01.64e60fc1.png&w=128&q=75"
                 />
-              </a>
+              </Link>
               <button className="close-btn d-block d-md-none">
                 <i className="bi bi-x-lg"></i>
               </button>
@@ -142,10 +142,7 @@ const SideMenu = () => {
                   className={activeMenu === "dashboard" ? "active" : ""}
                   onClick={() => handleMenuClick("dashbord")}
                 >
-                  <a
-                    className="d-flex w-100 align-items-center active"
-                    href="candidate-dashboard.html"
-                  >
+                  
                     <img
                       alt="icon"
                       loading="lazy"
@@ -158,7 +155,7 @@ const SideMenu = () => {
                       src="https://jobi-nextjs.vercel.app/_next/static/media/icon_1_active.77c90d6f.svg"
                     />
                     <Link to="/dashboard"><span>Dashboard</span></Link>
-                  </a>
+                  
                 </li>
                 <li className={activeMenu === "profile" ? "active" : ""}
                   onClick={() => handleMenuClick("profile")}>
@@ -224,7 +221,7 @@ const SideMenu = () => {
                       style={{ color: "transparent" }}
                       src="https://jobi-nextjs.vercel.app/_next/static/media/icon_5.7bc7faef.svg"
                     />
-                    <Link to="/jobalert"><span>Job Alert</span></Link>
+                    <Link to="/jobAlert"><span>Job Alert</span></Link>
                   
                 </li>
                 <li className={activeMenu === "jobSaved" ? "active" : ""}
@@ -263,12 +260,7 @@ const SideMenu = () => {
                 </li>
                 <li className={activeMenu === "delete" ? "active" : ""}
                   onClick={() => handleMenuClick("delete")}>
-                  <a
-                    //href="#"
-                    className="d-flex w-100 align-items-center"
-                    data-bs-toggle="modal"
-                    data-bs-target="#deleteModal"
-                  >
+                  
                     <img
                       alt="icon"
                       loading="lazy"
@@ -280,8 +272,8 @@ const SideMenu = () => {
                       style={{ color: "transparent" }}
                       src="https://jobi-nextjs.vercel.app/_next/static/media/icon_8.1d18804d.svg"
                     />
-                    <span>Delete Account</span>
-                  </a>
+                    
+                    <Link to="/delete"><span>Delete Account</span></Link>
                 </li>
               </ul>
             </nav>
