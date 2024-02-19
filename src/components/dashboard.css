@@ -380,7 +380,7 @@ input {
     padding-top: 10px !important;
   }
 }
-.dashboard-body {
+.board-body {
   min-height: 100vh;
   background: #f0f5f3;
   margin-left: 260px;

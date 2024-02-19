@@ -1,5 +1,6 @@
 import React from "react";
-import './dashboard.css'
+import { Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
+import "./dashboard.css";
 
 const Dashboard = () => {
   return (
@@ -22,7 +23,7 @@ const Dashboard = () => {
                   data-nimg="1"
                   className="lazy-img m-auto"
                   src="https://jobi-nextjs.vercel.app/_next/static/media/icon_10.35c41a63.svg"
-                  style={{color:"transparent"}}
+                  style={{ color: "transparent" }}
                 />
               </button>
             </form>
@@ -33,7 +34,7 @@ const Dashboard = () => {
                 id="notification-dropdown"
                 data-bs-toggle="dropdown"
                 data-bs-auto-close="outside"
-                aria-expanded="false"   
+                aria-expanded="false"
               >
                 <img
                   alt="Notification"
@@ -44,11 +45,14 @@ const Dashboard = () => {
                   data-nimg="1"
                   className="lazy-img"
                   src="https://jobi-nextjs.vercel.app/_next/static/media/icon_11.32f89e94.svg"
-                  style={{color:"transparent"}}
+                  style={{ color: "transparent" }}
                 />
                 <div className="badge-pill"></div>
               </button>
-              <ul className="dropdown-menu" aria-labelledby="notification-dropdown">
+              <ul
+                className="dropdown-menu"
+                aria-labelledby="notification-dropdown"
+              >
                 <li>
                   <h4>Notification</h4>
                   <ul className="style-none notify-list">
@@ -62,7 +66,7 @@ const Dashboard = () => {
                         data-nimg="1"
                         className="lazy-img icon"
                         src="https://jobi-nextjs.vercel.app/_next/static/media/icon_36.d044b698.svg"
-                        style={{color:"transparent"}}
+                        style={{ color: "transparent" }}
                       />
                       <div className="flex-fill ps-2">
                         <h6>You have 3 new mails</h6>
@@ -79,7 +83,7 @@ const Dashboard = () => {
                         data-nimg="1"
                         className="lazy-img icon"
                         src="https://jobi-nextjs.vercel.app/_next/static/media/icon_37.34c12156.svg"
-                        style={{color:"transparent"}}
+                        style={{ color: "transparent" }}
                       />
                       <div className="flex-fill ps-2">
                         <h6>You have 5 new mails</h6>
@@ -96,7 +100,7 @@ const Dashboard = () => {
                         data-nimg="1"
                         className="lazy-img icon"
                         src="https://jobi-nextjs.vercel.app/_next/static/media/icon_38.2db06cc7.svg"
-                        style={{color:"transparent"}}
+                        style={{ color: "transparent" }}
                       />
                       <div className="flex-fill ps-2">
                         <h6>You have 7 new mails</h6>
@@ -118,100 +122,243 @@ const Dashboard = () => {
           </div>
         </header>
         <h2 className="main-title">Dashboard</h2>
+
         <div className="row">
-          <div className="col-lg-3 col-6">
-            <div className="dash-card-one bg-white border-30 position-relative mb-15">
-              <div className="d-sm-flex align-items-center justify-content-between">
-                <div className="icon rounded-circle d-flex align-items-center justify-content-center order-sm-1">
-                  <img
-                    alt="icon"
-                    loading="lazy"
-                    width="21"
-                    height="26"
-                    decoding="async"
-                    data-nimg="1"
-                    className="lazy-img"
-                    src="https://jobi-nextjs.vercel.app/_next/static/media/icon_12.7f76845e.svg"
-                    style={{color:"transparent"}}
-                  />
+          <Grid container spacing={3}>
+            <Grid item xs={12} sm={6} md={3}>
+              <Card
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  height: "75%",
+                  padding: "0 20px 0 20px",
+                  marginLeft: "18px",
+                }}
+              >
+                <div className="col-lg-3 col-6">
+                  <div className="dash-card-one bg-white border-30 position-relative mb-15">
+                    <div className="d-sm-flex align-items-center justify-content-between">
+                      <CardContent>
+                        <div className="order-sm-0">
+                          <div className="value fw-500">
+                            <Typography
+                              variant="inherit"
+                              color="textSecondary"
+                              component="h2"
+                            >
+                              1.7k+
+                            </Typography>
+                          </div>
+                          <span>
+                            <Typography
+                              gutterBottom
+                              variant="inherit"
+                              component="h9"
+                            >
+                              Total Visitor
+                            </Typography>
+                          </span>
+                        </div>
+                      </CardContent>
+
+                      <CardMedia>
+                        <div className="icon rounded-circle d-flex align-items-center justify-content-center order-sm-1">
+                          <img
+                            alt="icon"
+                            loading="lazy"
+                            width="21"
+                            height="26"
+                            decoding="async"
+                            data-nimg="1"
+                            className="lazy-img"
+                            src="https://jobi-nextjs.vercel.app/_next/static/media/icon_12.7f76845e.svg"
+                            style={{ color: "transparent" }}
+                          />
+                        </div>
+                      </CardMedia>
+                    </div>
+                  </div>
                 </div>
-                <div className="order-sm-0">
-                  <div className="value fw-500">1.7k+</div>
-                  <span>Total Visitor</span>
+              </Card>
+            </Grid>
+
+            <Grid item xs={12} sm={6} md={3}>
+              <Card
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  height: "75%",
+                  padding: "0 20px 0 20px",
+                  marginLeft: "18px",
+                }}
+              >
+                <div className="col-lg-3 col-6">
+                  <div className="dash-card-one bg-white border-30 position-relative mb-15">
+                    <div className="d-sm-flex align-items-center justify-content-between">
+                      <CardContent>
+                        <div className="order-sm-0">
+                          <div className="value fw-500">
+                            <Typography
+                              variant="inherit"
+                              color="textSecondary"
+                              component="h2"
+                            >
+                              03
+                            </Typography>
+                          </div>
+                          <span>
+                            <Typography
+                              gutterBottom
+                              variant="inherit"
+                              component="h9"
+                            >
+                              Shortlisted
+                            </Typography>
+                          </span>
+                        </div>
+                      </CardContent>
+
+                      <CardMedia>
+                        <div className="icon rounded-circle d-flex align-items-center justify-content-center order-sm-1">
+                          <img
+                            alt="icon"
+                            loading="lazy"
+                            width="20"
+                            height="24"
+                            decoding="async"
+                            data-nimg="1"
+                            className="lazy-img"
+                            src="https://jobi-nextjs.vercel.app/_next/static/media/icon_13.d248bf19.svg"
+                            style={{ color: "transparent" }}
+                          />
+                        </div>
+                      </CardMedia>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-6">
-            <div className="dash-card-one bg-white border-30 position-relative mb-15">
-              <div className="d-sm-flex align-items-center justify-content-between">
-                <div className="icon rounded-circle d-flex align-items-center justify-content-center order-sm-1">
-                  <img
-                    alt="icon"
-                    loading="lazy"
-                    width="20"
-                    height="24"
-                    decoding="async"
-                    data-nimg="1"
-                    className="lazy-img"
-                    src="https://jobi-nextjs.vercel.app/_next/static/media/icon_13.d248bf19.svg"
-                    style={{color:"transparent"}}
-                  />
+              </Card>
+            </Grid>
+
+            <Grid item xs={12} sm={6} md={3}>
+              <Card
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  height: "75%",
+                  padding: "0 20px 0 20px",
+                  marginLeft: "18px",
+                }}
+              >
+                <div className="col-lg-3 col-6">
+                  <div className="dash-card-one bg-white border-30 position-relative mb-15">
+                    <div className="d-sm-flex align-items-center justify-content-between">
+                      <CardContent>
+                        <div className="order-sm-0">
+                          <div className="value fw-500">
+                            <Typography
+                              variant="inherit"
+                              color="textSecondary"
+                              component="h2"
+                            >
+                              2.1k
+                            </Typography>
+                          </div>
+                          <span>
+                            <Typography
+                              gutterBottom
+                              variant="inherit"
+                              component="h9"
+                            >
+                              Views
+                            </Typography>
+                          </span>
+                        </div>
+                      </CardContent>
+
+                      <CardMedia>
+                        <div className="icon rounded-circle d-flex align-items-center justify-content-center order-sm-1">
+                          <img
+                            alt="icon"
+                            loading="lazy"
+                            width="24"
+                            height="16"
+                            decoding="async"
+                            data-nimg="1"
+                            className="lazy-img"
+                            src="https://jobi-nextjs.vercel.app/_next/static/media/icon_14.5854971b.svg"
+                            style={{ color: "transparent" }}
+                          />
+                        </div>
+                      </CardMedia>
+                    </div>
+                  </div>
                 </div>
-                <div className="order-sm-0">
-                  <div className="value fw-500">03</div>
-                  <span>Shortlisted</span>
+              </Card>
+            </Grid>
+
+            <Grid item xs={12} sm={6} md={3}>
+              <Card
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  height: "75%",
+                  padding: "0px 20px 0 20px",
+                  marginLeft: "18px",
+                }}
+              >
+                <div className="col-lg-3 col-6">
+                  <div className="dash-card-one bg-white border-30 position-relative mb-15">
+                    <div className="d-sm-flex align-items-center justify-content-between">
+                      <CardContent>
+                        <div className="order-sm-0">
+                          <div className="value fw-500">
+                            <Typography
+                              variant="inherit"
+                              color="textSecondary"
+                              component="h2"
+                            >
+                              07
+                            </Typography>
+                          </div>
+                          <span>
+                            <Typography
+                              gutterBottom
+                              variant="inherit"
+                              component="h9"
+                            >
+                              Applied Job
+                            </Typography>
+                          </span>
+                        </div>
+                      </CardContent>
+
+                      <CardMedia>
+                        <div className="icon rounded-circle d-flex align-items-center justify-content-center order-sm-1">
+                          <img
+                            alt="icon"
+                            loading="lazy"
+                            width="25"
+                            height="24"
+                            decoding="async"
+                            data-nimg="1"
+                            className="lazy-img"
+                            src="https://jobi-nextjs.vercel.app/_next/static/media/icon_15.0025ba7e.svg"
+                            style={{ color: "transparent" }}
+                          />
+                        </div>
+                      </CardMedia>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-6">
-            <div className="dash-card-one bg-white border-30 position-relative mb-15">
-              <div className="d-sm-flex align-items-center justify-content-between">
-                <div className="icon rounded-circle d-flex align-items-center justify-content-center order-sm-1">
-                  <img
-                    alt="icon"
-                    loading="lazy"
-                    width="24"
-                    height="16"
-                    decoding="async"
-                    data-nimg="1"
-                    className="lazy-img"
-                    src="https://jobi-nextjs.vercel.app/_next/static/media/icon_14.5854971b.svg"
-                    style={{color:"transparent"}}
-                  />
-                </div>
-                <div className="order-sm-0">
-                  <div className="value fw-500">2.1k</div>
-                  <span>Views</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-3 col-6">
-            <div className="dash-card-one bg-white border-30 position-relative mb-15">
-              <div className="d-sm-flex align-items-center justify-content-between">
-                <div className="icon rounded-circle d-flex align-items-center justify-content-center order-sm-1">
-                  <img
-                    alt="icon"
-                    loading="lazy"
-                    width="25"
-                    height="24"
-                    decoding="async"
-                    data-nimg="1"
-                    className="lazy-img"
-                    src="https://jobi-nextjs.vercel.app/_next/static/media/icon_15.0025ba7e.svg"
-                    style={{color:"transparent"}}
-                  />
-                </div>
-                <div className="order-sm-0">
-                  <div className="value fw-500">07</div>
-                  <span>Applied Job</span>
-                </div>
-              </div>
-            </div>
-          </div>
+              </Card>
+            </Grid>
+          </Grid>
         </div>
+
         <div className="row d-flex pt-50 lg-pt-10">
           <div className="col-xl-7 col-lg-6 d-flex flex-column">
             <div className="user-activity-chart bg-white border-20 mt-30 h-100">
@@ -225,16 +372,17 @@ const Dashboard = () => {
                   decoding="async"
                   data-nimg="1"
                   className="lazy-img m-auto"
-                  srcset="
+                  /*srcset="
                 https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmain-graph.52916fa8.png&amp;w=640&amp;q=75  1x,
                 https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmain-graph.52916fa8.png&amp;w=1920&amp;q=75 2x
-              "
+              "*/
                   src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmain-graph.52916fa8.png&amp;w=1920&amp;q=75"
-                  style={{color:"transparent"}}
+                  style={{ color: "transparent" }}
                 />
               </div>
             </div>
           </div>
+
           <div className="col-xl-5 col-lg-6 d-flex">
             <div className="recent-job-tab bg-white border-20 mt-30 w-100">
               <h4 className="dash-title-two">Recent Applied Job</h4>
@@ -249,12 +397,12 @@ const Dashboard = () => {
                       decoding="async"
                       data-nimg="1"
                       className="lazy-img logo"
-                      srcset="
+                      s /*rcset="
                     https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_61.b310a81c.png&amp;w=48&amp;q=75 1x,
                     https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_61.b310a81c.png&amp;w=96&amp;q=75 2x
-                  "
+                  "*/
                       src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_61.b310a81c.png&amp;w=96&amp;q=75"
-                      style={{color:"transparent"}}
+                      style={{ color: "transparent" }}
                     />
                   </div>
                   <div className="job-title">
@@ -303,12 +451,12 @@ const Dashboard = () => {
                       decoding="async"
                       data-nimg="1"
                       className="lazy-img logo"
-                      srcset="
+                      /*srcset="
                     https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_60.fc342855.png&amp;w=48&amp;q=75 1x,
                     https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_60.fc342855.png&amp;w=96&amp;q=75 2x
-                  "
+                  "*/
                       src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_60.fc342855.png&amp;w=96&amp;q=75"
-                      style={{color:"transparent"}}
+                      style={{ color: "transparent" }}
                     />
                   </div>
                   <div className="job-title">
@@ -357,12 +505,12 @@ const Dashboard = () => {
                       decoding="async"
                       data-nimg="1"
                       className="lazy-img logo"
-                      srcset="
+                      /*srcset="
                     https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_59.4deaf874.png&amp;w=48&amp;q=75 1x,
                     https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_59.4deaf874.png&amp;w=96&amp;q=75 2x
-                  "
+                  "*/
                       src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_59.4deaf874.png&amp;w=96&amp;q=75"
-                      style={{color:"transparent"}}
+                      style={{ color: "transparent" }}
                     />
                   </div>
                   <div className="job-title">
@@ -411,12 +559,12 @@ const Dashboard = () => {
                       decoding="async"
                       data-nimg="1"
                       className="lazy-img logo"
-                      srcset="
+                      /*srcset="
                     https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_58.3df6f969.png&amp;w=48&amp;q=75 1x,
                     https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_58.3df6f969.png&amp;w=96&amp;q=75 2x
-                  "
+                  "*/
                       src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_58.3df6f969.png&amp;w=96&amp;q=75"
-                      style={{color:"transparent"}}
+                      style={{ color: "transparent" }}
                     />
                   </div>
                   <div className="job-title">
@@ -465,12 +613,12 @@ const Dashboard = () => {
                       decoding="async"
                       data-nimg="1"
                       className="lazy-img logo"
-                      srcset="
+                      /*srcset="
                     https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_57.429e6d57.png&amp;w=48&amp;q=75 1x,
                     https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_57.429e6d57.png&amp;w=96&amp;q=75 2x
-                  "
+                  "*/
                       src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_57.429e6d57.png&amp;w=96&amp;q=75"
-                      style={{color:"transparent"}}
+                      style={{ color: "transparent" }}
                     />
                   </div>
                   <div className="job-title">
