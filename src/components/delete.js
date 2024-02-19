@@ -1,4 +1,5 @@
 import React from "react";
+import {Popover} from '@mui/material';
 
 const Delete = () => {
   return (
@@ -9,6 +10,8 @@ const Delete = () => {
         data-bs-dismiss="modal"
         aria-label="Close"
       ></button>
+
+      <Popover>
       <img
         alt="icon"
         loading="lazy"
@@ -20,6 +23,7 @@ const Delete = () => {
         style={{color: "transparent"}}
         src="https://jobi-nextjs.vercel.app/_next/static/media/icon_22.2b286d7d.svg"
       />
+
       <h2>Are you sure?</h2>
       <p>Are you sure to delete your account? All data will be lost.</p>
       <div className="button-group d-inline-flex justify-content-center align-items-center pt-15">
@@ -35,6 +39,9 @@ const Delete = () => {
           Cancel
         </button>
       </div>
+
+      </Popover>
+
     </div>
   );
 };

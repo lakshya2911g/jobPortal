@@ -11,7 +11,9 @@ const SideMenu = () => {
     setActiveMenu(itemName);
   };
 
-  const [isOpen, setIsOpen] = useState(false);
+  
+
+  //const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="__variable_e76efa __variable_95782f">
@@ -307,6 +309,7 @@ const SideMenu = () => {
                     <span>Account Settings</span>
                   </Link>
                 </li>
+
                 <li
                   className={activeMenu === "delete" ? "active" : ""}
                   onClick={() => handleMenuClick("delete")}
@@ -333,6 +336,7 @@ const SideMenu = () => {
                     <span>Delete Account</span>
                   </Link>
                 </li>
+
               </ul>
             </nav>
             <div className="profile-complete-status">
