@@ -1,17 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import { Link } from "react-router-dom";
 
 import "./sidemenu.css";
+import { Button, Menu, MenuItem, Modal } from "@mui/material";
+import Delete from "./delete";
 
 const SideMenu = () => {
+  //routing
   const [activeMenu, setActiveMenu] = useState(null);
 
   const handleMenuClick = (itemName) => {
     setActiveMenu(itemName);
   };
 
-  
+  // sidemenu dropdown
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const drop = Boolean(anchorEl);
+  const handleDropClick = (event) => {
+    console.log('drop');
+    setAnchorEl(event.currentTarget);
+  };
+  const handleDropClose = () => {
+    setAnchorEl(null);
+  };
+
+  //pop up on delete
+
+  const [open, setOpen] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   //const [isOpen, setIsOpen] = useState(false);
 
@@ -66,19 +85,26 @@ const SideMenu = () => {
                   id="profile-dropdown"
                   data-bs-toggle="dropdown"
                   data-bs-auto-close="outside"
-                  aria-expanded="false"
+                  aria-controls={drop ? 'basic-menu' : undefined}
+                  aria-haspopup="true"
+                  aria-expanded={drop ? 'true' : undefined}
+                  onClick={handleDropClick}
                 >
                   James Brower
                 </button>
-                <ul
+
+                <Menu
                   className="dropdown-menu"
-                  aria-labelledby="profile-dropdown"
+                  id="basic-menu"
+                  anchorEl={anchorEl}
+                  open={drop}
+                  onClose={handleDropClose}
+                  MenuListProps={{
+                    'aria-labelledby': 'basic-button',
+                  }}
                 >
-                  <li>
-                    <a
-                      className="dropdown-item d-flex align-items-center"
-                      //href="candidate-dashboard/profile.html"
-                    >
+                  <MenuItem>
+                    
                       <img
                         alt="icon"
                         loading="lazy"
@@ -91,13 +117,10 @@ const SideMenu = () => {
                         src="https://jobi-nextjs.vercel.app/_next/static/media/icon_23.569a9456.svg"
                       />
                       <span className="ms-2 ps-1">Profile</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="dropdown-item d-flex align-items-center"
-                      href="candidate-dashboard/profile.html"
-                    >
+                    
+                  </MenuItem>
+                  <MenuItem>
+                    
                       <img
                         alt="icon"
                         loading="lazy"
@@ -110,13 +133,10 @@ const SideMenu = () => {
                         src="https://jobi-nextjs.vercel.app/_next/static/media/icon_24.0ace9f1a.svg"
                       />
                       <span className="ms-2 ps-1">Account Settings</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="dropdown-item d-flex align-items-center"
-                      //ref="#"
-                    >
+                    
+                  </MenuItem>
+                  <MenuItem>
+                    
                       <img
                         alt="icon"
                         loading="lazy"
@@ -129,9 +149,9 @@ const SideMenu = () => {
                         src="https://jobi-nextjs.vercel.app/_next/static/media/icon_25.b0559e8f.svg"
                       />
                       <span className="ms-2 ps-1">Notification</span>
-                    </a>
-                  </li>
-                </ul>
+                    
+                  </MenuItem>
+                </Menu>
               </div>
             </div>
             <nav className="dasboard-main-nav">
@@ -161,6 +181,7 @@ const SideMenu = () => {
                     <span>Dashboard</span>
                   </Link>
                 </li>
+
                 <li
                   className={activeMenu === "profile" ? "active" : ""}
                   onClick={() => handleMenuClick("profile")}
@@ -252,7 +273,7 @@ const SideMenu = () => {
                     decoding="async"
                     data-nimg="1"
                     className="lazy-img"
-                    style={{ color: "transparent", marginTop: "18x" }}
+                    style={{ color: "transparent", marginTop: "18px" }}
                     src="https://jobi-nextjs.vercel.app/_next/static/media/icon_5.7bc7faef.svg"
                   />
                   <Link to="/jobAlert">
@@ -311,8 +332,7 @@ const SideMenu = () => {
                 </li>
 
                 <li
-                  className={activeMenu === "delete" ? "active" : ""}
-                  onClick={() => handleMenuClick("delete")}
+                  onClick={handleOpen}
                   style={{
                     display: "flex",
                     justifyContent: "left",
@@ -332,11 +352,19 @@ const SideMenu = () => {
                     src="https://jobi-nextjs.vercel.app/_next/static/media/icon_8.1d18804d.svg"
                   />
 
-                  <Link to="/delete">
+                  <Link>
                     <span>Delete Account</span>
                   </Link>
-                </li>
 
+                  <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                  >
+                    <Delete />
+                  </Modal>
+                </li>
               </ul>
             </nav>
             <div className="profile-complete-status">

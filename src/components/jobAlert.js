@@ -128,7 +128,7 @@ const JobAlert = () => {
               <div className="d-flex align-items-center justify-content-between mb-40 lg-mb-30">
                 <h2 className="main-title m0">Job Alerts</h2>
                 <div className="short-filter d-flex align-items-center">
-                  <div className="text-dark fw-500 me-2">Short by:</div>
+                  <div className="text-dark fw-500 me-2">Sort by:</div>
                   <div className="nice-select false" role="button" tabindex="0">
                     <span className="current">New</span>
                     <ul className="list" role="menubar">
@@ -622,7 +622,7 @@ const JobAlert = () => {
                 </div>
               </Card>
 
-              <div className="dash-pagination d-flex justify-content-end mt-30">
+              <div style={{margin:"25px"}} className="dash-pagination d-flex justify-content-end mt-30">
                 <ul className="style-none d-flex align-items-center">
                   <li>
                     <a href="#" className="active">

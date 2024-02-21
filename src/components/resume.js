@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import "./resume.css";
-import { Card, Grid, Box } from "@mui/material";
+import {
+  Card,
+  Grid,
+  Box,
+  FormControl,
+  InputLabel,
+  Select,
+  MenuItem,
+} from "@mui/material";
 
 const Resume = () => {
+  const [content, setContent] = useState("");
+
+  const handleContentChange = (event) => {
+    setContent(event.target.value);
+  };
+
   return (
     <div>
       <div className="__variable_e76efa __variable_95782f">
@@ -160,9 +174,9 @@ const Resume = () => {
 
               <Card style={{ margin: "25px", borderRadius: "25px" }}>
                 <div className="bg-white card-box border-20 mt-40">
-                  <h4 className="dash-title-three">Intro &amp; Overview</h4>
+                  <h4 className="dash-title-three">Brief Summary</h4>
                   <div className="dash-input-wrapper mb-35 md-mb-20">
-                    <label for="">Overview*</label>
+                    <label for="">Summary*</label>
                     <textarea
                       className="size-lg"
                       placeholder="Write something interesting about you...."
@@ -171,58 +185,6 @@ const Resume = () => {
                       Brief description for your resume. URLs are hyperlinked.
                     </div>
                   </div>
-
-                  <Box sx={{ width: "100%" }}>
-                    <Grid
-                      container
-                      rowSpacing={1}
-                      columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-                      style={{ isplay: "flex", justifyContent: "center" }}
-                    >
-                      <div className="row">
-                        <Grid item xs={6} sx={{ width: "100%" }}>
-                          <div className="col-sm-6 d-flex">
-                            <div
-                              className="intro-video-post position-relative mt-20"
-                              style={{
-                                backgroundImage:
-                                  "url(../../_next/static/media/video_post.1da3537c.jpg);",
-                                backgroundSize: "cover",
-                                backgroundRepeat: "no-repeat",
-                                backgroundPosition: "center",
-                                width: "100%",
-                                height: "100%",
-                              }}
-                            >
-                              <a
-                                className="fancybox rounded-circle video-icon tran3s text-center"
-                                style={{ cursor: "pointer" }}
-                              >
-                                <i className="bi bi-play"></i>
-                              </a>
-                              <a href="#" className="close">
-                                <i className="bi bi-x"></i>
-                              </a>
-                            </div>
-                          </div>
-                        </Grid>
-
-                        <Grid item xs={6} sx={{ width: "100%" }}>
-                          <div className="col-sm-6 d-flex">
-                            <div className="intro-video-post position-relative empty mt-20">
-                              <span>+ Add Intro Video</span>
-                              <input
-                                type="file"
-                                id="uploadVdo"
-                                placeholder=""
-                                name="uploadVdo"
-                              />
-                            </div>
-                          </div>
-                        </Grid>
-                      </div>
-                    </Grid>
-                  </Box>
                 </div>
               </Card>
 
@@ -291,116 +253,146 @@ const Resume = () => {
                             </div>
                             <div className="col-lg-10">
                               <div className="row">
-                                <div className="col-sm-6">
-                                  <div className="dash-input-wrapper mb-30">
-                                    <div
-                                      className="nice-select false"
-                                      role="button"
-                                      tabindex="0"
+                                <Box
+                                  sx={{ minWidth: 120 }}
+                                  className="dash-input-wrapper mb-25"
+                                >
+                                  <FormControl fullWidth>
+                                    <InputLabel id="demo-simple-select-label">
+                                      From
+                                    </InputLabel>
+
+                                    <Select
+                                      className="list"
+                                      role="menubar"
+                                      labelId="demo-simple-select-label"
+                                      id="demo-simple-select"
+                                      value={content}
+                                      label="From"
+                                      onChange={handleContentChange}
                                     >
-                                      <span className="current">2023</span>
-                                      <ul className="list" role="menubar">
-                                        <li
-                                          data-value="2023"
-                                          className="option selected focus"
-                                          role="menuitem"
-                                        >
-                                          2023
-                                        </li>
-                                        <li
-                                          data-value="2023"
-                                          className="option selected focus"
-                                          role="menuitem"
-                                        >
-                                          2023
-                                        </li>
-                                        <li
-                                          data-value="2025"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2025
-                                        </li>
-                                        <li
-                                          data-value="2024"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2024
-                                        </li>
-                                        <li
-                                          data-value="2019"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2019
-                                        </li>
-                                        <li
-                                          data-value="2018"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2018
-                                        </li>
-                                      </ul>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="col-sm-6">
-                                  <div className="dash-input-wrapper mb-30">
-                                    <div
-                                      className="nice-select false"
-                                      role="button"
-                                      tabindex="0"
+                                      <MenuItem
+                                        value={1}
+                                        className="option selected focus"
+                                        role="menuitem"
+                                      >
+                                        2024
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={2}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2023
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={3}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2022
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={4}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2021
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={5}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2020
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={6}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2019
+                                      </MenuItem>
+                                      <MenuItem
+                                        dvalue={7}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2018
+                                      </MenuItem>
+                                    </Select>
+                                  </FormControl>
+                                </Box>
+                                <Box
+                                  sx={{ minWidth: 120 }}
+                                  className="dash-input-wrapper mb-25"
+                                >
+                                  <FormControl fullWidth>
+                                    <InputLabel id="demo-simple-select-label">
+                                      To
+                                    </InputLabel>
+
+                                    <Select
+                                      className="list"
+                                      role="menubar"
+                                      labelId="demo-simple-select-label"
+                                      id="demo-simple-select"
+                                      value={content}
+                                      label="To"
+                                      onChange={handleContentChange}
                                     >
-                                      <span className="current">2023</span>
-                                      <ul className="list" role="menubar">
-                                        <li
-                                          data-value="2023"
-                                          className="option selected focus"
-                                          role="menuitem"
-                                        >
-                                          2023
-                                        </li>
-                                        <li
-                                          data-value="2023"
-                                          className="option selected focus"
-                                          role="menuitem"
-                                        >
-                                          2023
-                                        </li>
-                                        <li
-                                          data-value="2025"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2025
-                                        </li>
-                                        <li
-                                          data-value="2024"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2024
-                                        </li>
-                                        <li
-                                          data-value="2019"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2019
-                                        </li>
-                                        <li
-                                          data-value="2018"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2018
-                                        </li>
-                                      </ul>
-                                    </div>
-                                  </div>
-                                </div>
+                                      <MenuItem
+                                        value={1}
+                                        className="option selected focus"
+                                        role="menuitem"
+                                      >
+                                        2024
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={2}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2023
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={3}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2022
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={4}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2021
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={5}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2020
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={6}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2019
+                                      </MenuItem>
+                                      <MenuItem
+                                        dvalue={7}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2018
+                                      </MenuItem>
+                                    </Select>
+                                  </FormControl>
+                                </Box>
                               </div>
                             </div>
                           </div>
@@ -479,118 +471,142 @@ const Resume = () => {
                               </div>
                             </div>
                             <div className="col-lg-10">
-                              <div className="row">
-                                <div className="col-sm-6">
-                                  <div className="dash-input-wrapper mb-30">
-                                    <div
-                                      className="nice-select false"
-                                      role="button"
-                                      tabindex="0"
+                              <Box  className="row">
+                                <Box sx={{maxWidth:"120"}} className="dash-input-wrapper mb-25">
+                                  <FormControl fullWidth>
+                                    <InputLabel id="demo-simple-select-label">
+                                      From
+                                    </InputLabel>
+
+                                    <Select
+                                      className="list"
+                                      role="menubar"
+                                      labelId="demo-simple-select-label"
+                                      id="demo-simple-select"
+                                      value={content}
+                                      label="From"
+                                      onChange={handleContentChange}
                                     >
-                                      <span className="current">2023</span>
-                                      <ul className="list" role="menubar">
-                                        <li
-                                          data-value="2023"
-                                          className="option selected focus"
-                                          role="menuitem"
-                                        >
-                                          2023
-                                        </li>
-                                        <li
-                                          data-value="2023"
-                                          className="option selected focus"
-                                          role="menuitem"
-                                        >
-                                          2023
-                                        </li>
-                                        <li
-                                          data-value="2025"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2025
-                                        </li>
-                                        <li
-                                          data-value="2024"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2024
-                                        </li>
-                                        <li
-                                          data-value="2019"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2019
-                                        </li>
-                                        <li
-                                          data-value="2018"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2018
-                                        </li>
-                                      </ul>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="col-sm-6">
-                                  <div className="dash-input-wrapper mb-30">
-                                    <div
-                                      className="nice-select false"
-                                      role="button"
-                                      tabindex="0"
+                                      <MenuItem
+                                        value={1}
+                                        className="option selected focus"
+                                        role="menuitem"
+                                      >
+                                        2024
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={2}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2023
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={3}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2022
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={4}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2021
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={5}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2020
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={6}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2019
+                                      </MenuItem>
+                                      <MenuItem
+                                        dvalue={7}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2018
+                                      </MenuItem>
+                                    </Select>
+                                  </FormControl>
+                                </Box>
+                                <Box sx={{maxWidth:"120"}} className="dash-input-wrapper mb-25">
+                                  <FormControl fullWidth>
+                                    <InputLabel id="demo-simple-select-label">
+                                      To
+                                    </InputLabel>
+
+                                    <Select
+                                      className="list"
+                                      role="menubar"
+                                      labelId="demo-simple-select-label"
+                                      id="demo-simple-select"
+                                      value={content}
+                                      label="To"
+                                      onChange={handleContentChange}
                                     >
-                                      <span className="current">2023</span>
-                                      <ul className="list" role="menubar">
-                                        <li
-                                          data-value="2023"
-                                          className="option selected focus"
-                                          role="menuitem"
-                                        >
-                                          2023
-                                        </li>
-                                        <li
-                                          data-value="2023"
-                                          className="option selected focus"
-                                          role="menuitem"
-                                        >
-                                          2023
-                                        </li>
-                                        <li
-                                          data-value="2025"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2025
-                                        </li>
-                                        <li
-                                          data-value="2024"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2024
-                                        </li>
-                                        <li
-                                          data-value="2019"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2019
-                                        </li>
-                                        <li
-                                          data-value="2018"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2018
-                                        </li>
-                                      </ul>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
+                                      <MenuItem
+                                        value={1}
+                                        className="option selected focus"
+                                        role="menuitem"
+                                      >
+                                        2024
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={2}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2023
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={3}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2022
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={4}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2021
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={5}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2020
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={6}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2019
+                                      </MenuItem>
+                                      <MenuItem
+                                        dvalue={7}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2018
+                                      </MenuItem>
+                                    </Select>
+                                  </FormControl>
+                                </Box>
+                              </Box>
                             </div>
                           </div>
                           <div className="row">
@@ -738,116 +754,140 @@ const Resume = () => {
                             </div>
                             <div className="col-lg-10">
                               <div className="row">
-                                <div className="col-sm-6">
-                                  <div className="dash-input-wrapper mb-30">
-                                    <div
-                                      className="nice-select false"
-                                      role="button"
-                                      tabindex="0"
+                              <Box sx={{maxWidth:"120"}} className="dash-input-wrapper mb-25">
+                                  <FormControl fullWidth>
+                                    <InputLabel id="demo-simple-select-label">
+                                      From
+                                    </InputLabel>
+
+                                    <Select
+                                      className="list"
+                                      role="menubar"
+                                      labelId="demo-simple-select-label"
+                                      id="demo-simple-select"
+                                      value={content}
+                                      label="From"
+                                      onChange={handleContentChange}
                                     >
-                                      <span className="current">2023</span>
-                                      <ul className="list" role="menubar">
-                                        <li
-                                          data-value="2023"
-                                          className="option selected focus"
-                                          role="menuitem"
-                                        >
-                                          2023
-                                        </li>
-                                        <li
-                                          data-value="2023"
-                                          className="option selected focus"
-                                          role="menuitem"
-                                        >
-                                          2023
-                                        </li>
-                                        <li
-                                          data-value="2025"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2025
-                                        </li>
-                                        <li
-                                          data-value="2024"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2024
-                                        </li>
-                                        <li
-                                          data-value="2019"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2019
-                                        </li>
-                                        <li
-                                          data-value="2018"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2018
-                                        </li>
-                                      </ul>
-                                    </div>
-                                  </div>
-                                </div>
-                                <div className="col-sm-6">
-                                  <div className="dash-input-wrapper mb-30">
-                                    <div
-                                      className="nice-select false"
-                                      role="button"
-                                      tabindex="0"
+                                      <MenuItem
+                                        value={1}
+                                        className="option selected focus"
+                                        role="menuitem"
+                                      >
+                                        2024
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={2}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2023
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={3}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2022
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={4}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2021
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={5}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2020
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={6}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2019
+                                      </MenuItem>
+                                      <MenuItem
+                                        dvalue={7}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2018
+                                      </MenuItem>
+                                    </Select>
+                                  </FormControl>
+                                </Box>
+                                <Box sx={{maxWidth:"120"}} className="dash-input-wrapper mb-25">
+                                  <FormControl fullWidth>
+                                    <InputLabel id="demo-simple-select-label">
+                                      To
+                                    </InputLabel>
+
+                                    <Select
+                                      className="list"
+                                      role="menubar"
+                                      labelId="demo-simple-select-label"
+                                      id="demo-simple-select"
+                                      value={content}
+                                      label="To"
+                                      onChange={handleContentChange}
                                     >
-                                      <span className="current">2023</span>
-                                      <ul className="list" role="menubar">
-                                        <li
-                                          data-value="2023"
-                                          className="option selected focus"
-                                          role="menuitem"
-                                        >
-                                          2023
-                                        </li>
-                                        <li
-                                          data-value="2023"
-                                          className="option selected focus"
-                                          role="menuitem"
-                                        >
-                                          2023
-                                        </li>
-                                        <li
-                                          data-value="2025"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2025
-                                        </li>
-                                        <li
-                                          data-value="2024"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2024
-                                        </li>
-                                        <li
-                                          data-value="2019"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2019
-                                        </li>
-                                        <li
-                                          data-value="2018"
-                                          className="option false"
-                                          role="menuitem"
-                                        >
-                                          2018
-                                        </li>
-                                      </ul>
-                                    </div>
-                                  </div>
-                                </div>
+                                      <MenuItem
+                                        value={1}
+                                        className="option selected focus"
+                                        role="menuitem"
+                                      >
+                                        2024
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={2}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2023
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={3}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2022
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={4}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2021
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={5}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2020
+                                      </MenuItem>
+                                      <MenuItem
+                                        value={6}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2019
+                                      </MenuItem>
+                                      <MenuItem
+                                        dvalue={7}
+                                        className="option false"
+                                        role="menuitem"
+                                      >
+                                        2018
+                                      </MenuItem>
+                                    </Select>
+                                  </FormControl>
+                                </Box>
                               </div>
                             </div>
                           </div>
@@ -876,7 +916,10 @@ const Resume = () => {
                 </div>
               </Card>
 
-              <div className="button-group d-inline-flex align-items-center mt-30">
+              <div
+                style={{ margin: "25px" }}
+                className="button-group d-inline-flex align-items-center mt-30"
+              >
                 <a href="#" className="dash-btn-two tran3s me-3">
                   Save
                 </a>
@@ -891,73 +934,6 @@ const Resume = () => {
         <button className="scroll-top">
           <i className="bi bi-arrow-up-short"></i>
         </button>
-        {/*<script
-      src="../../_next/static/chunks/webpack-6a4e5b800bd8a703.js"
-      async=""
-    ></script>
-    <script
-      src="../../_next/static/chunks/2443530c-871fd217cb38e8bd.js"
-      async=""
-    ></script>
-    <script
-      src="../../_next/static/chunks/6488-0174e9811757ac3e.js"
-      async=""
-    ></script>
-    <script
-      src="../../_next/static/chunks/main-app-a671bfc622ba85d3.js"
-      async=""
-    ></script>
-    <script>
-      (self.__next_f = self.__next_f || []).push([0]);
-    </script>
-    <script>
-      self.__next_f.push([
-        1,
-        '1:HL["/_next/static/media/2c5243ddb420350b-s.p.woff2",{"as":"font","type":"font/woff2"}]\n2:HL["/_next/static/media/41d071df82ce7b14-s.p.woff",{"as":"font","type":"font/woff"}]\n3:HL["/_next/static/media/54867ac977eda96b-s.p.woff2",{"as":"font","type":"font/woff2"}]\n4:HL["/_next/static/media/664ad6406ba55027-s.p.woff",{"as":"font","type":"font/woff"}]\n5:HL["/_next/static/media/bdcb71c25532c7a7-s.p.woff2",{"as":"font","type":"font/woff2"}]\n6:HL["/_next/static/css/d6198bcf2c342a81.css",{"as":"style"}]\n0:"$L7"\n',
-      ]);
-    </script>
-    <script>
-      self.__next_f.push([
-        1,
-        '8:I{"id":"38827","chunks":["2272:static/chunks/webpack-6a4e5b800bd8a703.js","2667:static/chunks/2443530c-871fd217cb38e8bd.js","6488:static/chunks/6488-0174e9811757ac3e.js"],"name":"","async":false}\na:I{"id":"9126","chunks":["2272:static/chunks/webpack-6a4e5b800bd8a703.js","2667:static/chunks/2443530c-871fd217cb38e8bd.js","6488:static/chunks/6488-0174e9811757ac3e.js"],"name":"","async":false}\nb:I{"id":"46828","chunks":["1692:static/chunks/1692-dcc4c2fb4e5b7017.js","3185:static/chunks/app/layout-76e490d609218',
-      ]);
-    </script>
-    <script>
-      self.__next_f.push([
-        1,
-        'e02.js"],"name":"Providers","async":false}\nd:I{"id":"11401","chunks":["1692:static/chunks/1692-dcc4c2fb4e5b7017.js","3185:static/chunks/app/layout-76e490d609218e02.js"],"name":"","async":false}\ne:I{"id":"14463","chunks":["2272:static/chunks/webpack-6a4e5b800bd8a703.js","2667:static/chunks/2443530c-871fd217cb38e8bd.js","6488:static/chunks/6488-0174e9811757ac3e.js"],"name":"","async":false}\nf:I{"id":"91010","chunks":["2272:static/chunks/webpack-6a4e5b800bd8a703.js","2667:static/chunks/2443530c-871fd217cb38e8b',
-      ]);
-    </script>
-    <script>
-      self.__next_f.push([
-        1,
-        'd.js","6488:static/chunks/6488-0174e9811757ac3e.js"],"name":"","async":false}\n10:I{"id":"14143","chunks":["2272:static/chunks/webpack-6a4e5b800bd8a703.js","2667:static/chunks/2443530c-871fd217cb38e8bd.js","6488:static/chunks/6488-0174e9811757ac3e.js"],"name":"","async":false}\n11:I{"id":"52722","chunks":["1692:static/chunks/1692-dcc4c2fb4e5b7017.js","9962:static/chunks/9962-5dde33761d733d2c.js","967:static/chunks/967-8f45dcb97aef8f68.js","3277:static/chunks/3277-c93706aad3146a3f.js","4951:static/chunks/4951-',
-      ]);
-    </script>
-    <script>
-      self.__next_f.push([
-        1,
-        '109eaff1aa2aec16.js","9153:static/chunks/app/dashboard/candidate-dashboard/resume/page-0a9962d203e57301.js"],"name":"","async":false}\n',
-      ]);
-    </script>
-    <script>
-      self.__next_f.push([
-        1,
-        '7:[[["$","link","0",{"rel":"stylesheet","href":"/_next/static/css/d6198bcf2c342a81.css","precedence":"next"}]],["$","$L8",null,{"assetPrefix":"","initialCanonicalUrl":"/dashboard/candidate-dashboard/resume","initialTree":["",{"children":["dashboard",{"children":["candidate-dashboard",{"children":["resume",{"children":["__PAGE__",{}]}]}]}]},"$undefined","$undefined",true],"initialHead":["$L9",["$","meta",null,{"name":"next-size-adjust"}]],"globalErrorComponent":"$a","notFound":["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.ico","sizes":"any"}]}],["$","body",null,{"suppressHydrationWarning":true,"classNameName":"__variable_e76efa __variable_95782f","children":[["$","$Lb",null,{"children":["$Lc","$undefined",[["$","title",null,{"children":"404: This page could not be found."}],["$","div",null,{"style":{"fontFamily":"system-ui,\\"Segoe UI\\",Roboto,Helvetica,Arial,sans-serif,\\"Apple Color Emoji\\",\\"Segoe UI Emoji\\"","height":"100vh","textAlign":"center","display":"flex","flexDirection":"column","alignItems":"center","justifyContent":"center"},"children":["$","div",null,{"children":[["$","style",null,{"dangerouslySetInnerHTML":{"__html":"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}"}}],["$","h1",null,{"classNameName":"next-error-h1","style":{"display":"inline-block","margin":"0 20px 0 0","padding":"0 23px 0 0","fontSize":24,"fontWeight":500,"verticalAlign":"top","lineHeight":"49px"},"children":"404"}],["$","div",null,{"style":{"display":"inline-block"},"children":["$","h2",null,{"style":{"fontSize":14,"fontWeight":400,"lineHeight":"49px","margin":0},"children":"This page could not be found."}]}]]}]}]]]}],["$","$Ld",null,{}]]}]]}],"asNotFound":false,"children":[["$","html",null,{"lang":"en","children":[["$","head",null,{"children":["$","link",null,{"rel":"icon","href":"/favicon.ico","sizes":"any"}]}],["$","body",null,{"suppressHydrationWarning":true,"classNameName":"__variable_e76efa __variable_95782f","children":[["$","$Lb",null,{"children":["$","$Le",null,{"parallelRouterKey":"children","segmentPath":["children"],"error":"$undefined","errorStyles":"$undefined","loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"template":["$","$Lf",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$","$Le",null,{"parallelRouterKey":"children","segmentPath":["children","dashboard","children"],"error":"$undefined","errorStyles":"$undefined","loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"template":["$","$Lf",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$","$Le",null,{"parallelRouterKey":"children","segmentPath":["children","dashboard","children","candidate-dashboard","children"],"error":"$undefined","errorStyles":"$undefined","loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"template":["$","$Lf",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":["$","$Le",null,{"parallelRouterKey":"children","segmentPath":["children","dashboard","children","candidate-dashboard","children","resume","children"],"error":"$undefined","errorStyles":"$undefined","loading":"$undefined","loadingStyles":"$undefined","hasLoading":false,"template":["$","$Lf",null,{}],"templateStyles":"$undefined","notFound":"$undefined","notFoundStyles":"$undefined","childProp":{"current":[["$","$L10",null,{"propsForComponent":{"params":{}},"Component":"$11"}],null],"segment":"__PAGE__"},"styles":[]}],"segment":"resume"},"styles":[]}],"segment":"candidate-dashboard"},"styles":[]}],"segment":"dashboard"},"styles":[]}]}],["$","$Ld",null,{}]]}]]}],null]}]]\n',
-      ]);
-    </script>
-    <script>
-      self.__next_f.push([
-        1,
-        'c:[[["$","meta",null,{"charSet":"utf-8"}],null,null,null,null,null,null,null,null,null,null,["$","meta",null,{"name":"viewport","content":"width=device-width, initial-scale=1"}],null,null,null,null,null,null,null,null,null,null,[]],[null,null,null,null],null,null,[null,null,null,null,null],null,null,null,null,null]\n',
-      ]);
-    </script>
-    <script>
-      self.__next_f.push([
-        1,
-        '9:[[["$","meta",null,{"charSet":"utf-8"}],["$","title",null,{"children":"Jobi - Job Portal \u0026 Job Board React NextJS Template"}],["$","meta",null,{"name":"description","content":"Generated by create next app"}],null,null,null,null,null,null,null,null,["$","meta",null,{"name":"viewport","content":"width=device-width, initial-scale=1"}],null,null,null,null,null,null,null,null,null,null,[]],[null,null,null,null],null,null,[null,null,null,null,null],null,null,null,null,[null,[["$","link",null,{"rel":"icon","href":"/favicon.ico","type":"image/x-icon","sizes":"any"}]],[],null]]\n',
-      ]);
-    </script>*/}
       </div>
     </div>
   );

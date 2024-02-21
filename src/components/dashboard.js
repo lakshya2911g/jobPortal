@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Grid, Typography, Box } from "@mui/material";
 import "./dashboard.css";
 
 const Dashboard = () => {
@@ -131,17 +131,19 @@ const Dashboard = () => {
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
+                  
                   height: "75%",
                   padding: "0 20px 0 20px",
                   marginLeft: "18px",
+                  borderRadius:"25px"
                 }}
               >
                 <div className="col-lg-3 col-6">
                   <div className="dash-card-one bg-white border-30 position-relative mb-15">
                     <div className="d-sm-flex align-items-center justify-content-between">
-                      <CardContent>
-                        <div className="order-sm-0">
-                          <div className="value fw-500">
+                      {<CardContent>
+                        <div  className="order-sm-0">
+                          <div  className="value fw-500">
                             <Typography
                               variant="inherit"
                               color="textSecondary"
@@ -160,9 +162,9 @@ const Dashboard = () => {
                             </Typography>
                           </span>
                         </div>
-                      </CardContent>
+                      </CardContent>}
 
-                      <CardMedia>
+                      <CardMedia >
                         <div className="icon rounded-circle d-flex align-items-center justify-content-center order-sm-1">
                           <img
                             alt="icon"
@@ -192,6 +194,7 @@ const Dashboard = () => {
                   height: "75%",
                   padding: "0 20px 0 20px",
                   marginLeft: "18px",
+                  borderRadius:"25px"
                 }}
               >
                 <div className="col-lg-3 col-6">
@@ -250,6 +253,7 @@ const Dashboard = () => {
                   height: "75%",
                   padding: "0 20px 0 20px",
                   marginLeft: "18px",
+                  borderRadius:"25px"
                 }}
               >
                 <div className="col-lg-3 col-6">
@@ -308,6 +312,7 @@ const Dashboard = () => {
                   height: "75%",
                   padding: "0px 20px 0 20px",
                   marginLeft: "18px",
+                  borderRadius:"25px"
                 }}
               >
                 <div className="col-lg-3 col-6">
@@ -359,8 +364,8 @@ const Dashboard = () => {
           </Grid>
         </div>
 
-        <div className="row d-flex pt-50 lg-pt-10">
-          <div className="col-xl-7 col-lg-6 d-flex flex-column">
+        <div style={{display:"flex", justifyContent:"center"}} className="row d-flex pt-50 lg-pt-10">
+          <Box style={{backgroundColor:"white", borderRadius:"20px", margin:"30px", width:"450px"}} className="col-xl-7 col-lg-6 d-flex flex-column">
             <div className="user-activity-chart bg-white border-20 mt-30 h-100">
               <h4 className="dash-title-two">Profile Views</h4>
               <div className="ps-5 pe-5 mt-50">
@@ -381,9 +386,9 @@ const Dashboard = () => {
                 />
               </div>
             </div>
-          </div>
+          </Box>
 
-          <div className="col-xl-5 col-lg-6 d-flex">
+          <Box style={{backgroundColor:"white", borderRadius:"20px", margin:"30px", width:"450px"}} className="col-xl-5 col-lg-6 d-flex">
             <div className="recent-job-tab bg-white border-20 mt-30 w-100">
               <h4 className="dash-title-two">Recent Applied Job</h4>
               <div className="wrapper">
@@ -659,7 +664,7 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </Box>
         </div>
       </div>
     </div>

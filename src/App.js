@@ -30,7 +30,7 @@ function App() {
           <Route path="/jobAlert" Component={JobAlert} />
           <Route path="/savedJob" Component={JobSaved} />
           <Route path="/accountSettings" Component={Settings} />
-          <Route path="/delete" Component={Delete} />
+          
         </Routes>
       </Router>
     </>
