@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "./jobalert.css";
-import { Card } from "@mui/material";
+import { Card, Menu, MenuItem, MenuList, Typography } from "@mui/material";
 
 const JobAlert = () => {
+  // notification dropdown
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [drop, setDrop] = useState(false);
+  const handleDropClick = (e) => {
+    setAnchorEl(e.currentTarget);
+    setDrop(true);
+  };
+  const handleDropClose = () => {
+    setAnchorEl(null);
+    setDrop(false);
+  };
+
+  const [content, setContent] = useState("");
+
+  const handleContentChange = (event) => {
+    setContent(event.target.value);
+  };
+
   return (
     <div>
       <div className="__variable_e76efa __variable_95782f">
@@ -35,9 +54,10 @@ const JobAlert = () => {
                       className="noti-btn dropdown-toggle"
                       type="button"
                       id="notification-dropdown"
-                      data-bs-toggle="dropdown"
-                      data-bs-auto-close="outside"
-                      aria-expanded="false"
+                      aria-controls={drop ? "basic-menu" : undefined}
+                      aria-haspopup="true"
+                      aria-expanded={drop ? "true" : undefined}
+                      onClick={handleDropClick}
                     >
                       <img
                         alt="Notification"
@@ -47,19 +67,26 @@ const JobAlert = () => {
                         decoding="async"
                         data-nimg="1"
                         className="lazy-img"
-                        style={{ color: "transparent" }}
                         src="https://jobi-nextjs.vercel.app/_next/static/media/icon_11.32f89e94.svg"
+                        style={{ color: "transparent" }}
                       />
                       <div className="badge-pill"></div>
                     </button>
-                    <ul
-                      className="dropdown-menu"
-                      aria-labelledby="notification-dropdown"
+                    <Menu
+                      //className="dropdown-menu"
+                      //aria-labelledby="notification-dropdown"
+                      anchorEl={anchorEl}
+                      open={drop}
+                      onClose={handleDropClose}
                     >
-                      <li>
-                        <h4>Notification</h4>
-                        <ul className="style-none notify-list">
-                          <li className="d-flex align-items-center unread">
+                      <MenuItem
+                        sx={{ display: "flex", flexDirection: "column" }}
+                      >
+                        <MenuList className="style-none notify-list">
+                          <MenuItem
+                            sx={{ gap: "15px" }}
+                            className="d-flex align-items-center unread"
+                          >
                             <img
                               alt="icon"
                               loading="lazy"
@@ -68,15 +95,20 @@ const JobAlert = () => {
                               decoding="async"
                               data-nimg="1"
                               className="lazy-img icon"
+                              src="https://jobi-nextjs.vercel.app/_next/static/media/icon_36.d044b698.svg"
                               style={{ color: "transparent" }}
-                              src="../../_next/static/media/icon_36.d044b698.svg"
                             />
                             <div className="flex-fill ps-2">
-                              <h6>You have 3 new mails</h6>
+                              <Typography variant="inherit">
+                                You have 3 new mails
+                              </Typography>
                               <span className="time">3 hours ago</span>
                             </div>
-                          </li>
-                          <li className="d-flex align-items-center">
+                          </MenuItem>
+                          <MenuItem
+                            sx={{ gap: "15px" }}
+                            className="d-flex align-items-center"
+                          >
                             <img
                               alt="icon"
                               loading="lazy"
@@ -85,15 +117,20 @@ const JobAlert = () => {
                               decoding="async"
                               data-nimg="1"
                               className="lazy-img icon"
+                              src="https://jobi-nextjs.vercel.app/_next/static/media/icon_37.34c12156.svg"
                               style={{ color: "transparent" }}
-                              src="../../_next/static/media/icon_37.34c12156.svg"
                             />
                             <div className="flex-fill ps-2">
-                              <h6>You have 5 new mails</h6>
+                              <Typography variant="inherit">
+                                You have 5 new mails
+                              </Typography>
                               <span className="time">6 hours ago</span>
                             </div>
-                          </li>
-                          <li className="d-flex align-items-center unread">
+                          </MenuItem>
+                          <MenuItem
+                            sx={{ gap: "15px" }}
+                            className="d-flex align-items-center unread"
+                          >
                             <img
                               alt="icon"
                               loading="lazy"
@@ -102,17 +139,19 @@ const JobAlert = () => {
                               decoding="async"
                               data-nimg="1"
                               className="lazy-img icon"
+                              src="https://jobi-nextjs.vercel.app/_next/static/media/icon_38.2db06cc7.svg"
                               style={{ color: "transparent" }}
-                              src="../../_next/static/media/icon_38.2db06cc7.svg"
                             />
                             <div className="flex-fill ps-2">
-                              <h6>You have 7 new mails</h6>
+                              <Typography variant="inherit">
+                                You have 7 new mails
+                              </Typography>
                               <span className="time">9 hours ago</span>
                             </div>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
+                          </MenuItem>
+                        </MenuList>
+                      </MenuItem>
+                    </Menu>
                   </div>
                   <div>
                     <a
@@ -622,7 +661,10 @@ const JobAlert = () => {
                 </div>
               </Card>
 
-              <div style={{margin:"25px"}} className="dash-pagination d-flex justify-content-end mt-30">
+              <div
+                style={{ margin: "25px" }}
+                className="dash-pagination d-flex justify-content-end mt-30"
+              >
                 <ul className="style-none d-flex align-items-center">
                   <li>
                     <a href="#" className="active">

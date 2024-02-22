@@ -17,13 +17,15 @@ const SideMenu = () => {
   // sidemenu dropdown
 
   const [anchorEl, setAnchorEl] = useState(null);
-  const drop = Boolean(anchorEl);
-  const handleDropClick = (event) => {
-    console.log('drop');
-    setAnchorEl(event.currentTarget);
+  const [drop, setDrop] = useState(false);
+
+  const handleDropClick = (e) => {
+    setAnchorEl(e.currentTarget);
+    setDrop(true);
   };
   const handleDropClose = () => {
     setAnchorEl(null);
+    setDrop(false);
   };
 
   //pop up on delete
@@ -83,73 +85,61 @@ const SideMenu = () => {
                   className="user-name dropdown-toggle"
                   type="button"
                   id="profile-dropdown"
-                  data-bs-toggle="dropdown"
-                  data-bs-auto-close="outside"
-                  aria-controls={drop ? 'basic-menu' : undefined}
+                  aria-controls={drop ? "basic-menu" : undefined}
                   aria-haspopup="true"
-                  aria-expanded={drop ? 'true' : undefined}
+                  aria-expanded={drop ? "true" : undefined}
                   onClick={handleDropClick}
                 >
                   James Brower
                 </button>
 
                 <Menu
-                  className="dropdown-menu"
-                  id="basic-menu"
+                  //className="dropdown-menu"
+                  //id="basic-menu"
+
                   anchorEl={anchorEl}
                   open={drop}
                   onClose={handleDropClose}
-                  MenuListProps={{
-                    'aria-labelledby': 'basic-button',
-                  }}
                 >
-                  <MenuItem>
-                    
-                      <img
-                        alt="icon"
-                        loading="lazy"
-                        width="18"
-                        height="22"
-                        decoding="async"
-                        data-nimg="1"
-                        className="lazy-img"
-                        style={{ color: "transparent" }}
-                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_23.569a9456.svg"
-                      />
-                      <span className="ms-2 ps-1">Profile</span>
-                    
+                  <MenuItem
+                    sx={{ gap: "15px" }}
+                    className={activeMenu === "profile" ? "active" : ""}
+                    onClick={() => handleMenuClick("profile")}
+                  >
+                    <img
+                      alt="icon"
+                      loading="lazy"
+                      width="18"
+                      height="22"
+                      decoding="async"
+                      data-nimg="1"
+                      className="lazy-img"
+                      style={{ color: "transparent" }}
+                      src="https://jobi-nextjs.vercel.app/_next/static/media/icon_23.569a9456.svg"
+                    />
+                    <Link to="/myProfile">
+                      <span> Profile</span>
+                    </Link>
                   </MenuItem>
-                  <MenuItem>
-                    
-                      <img
-                        alt="icon"
-                        loading="lazy"
-                        width="21"
-                        height="22"
-                        decoding="async"
-                        data-nimg="1"
-                        className="lazy-img"
-                        style={{ color: "transparent" }}
-                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_24.0ace9f1a.svg"
-                      />
-                      <span className="ms-2 ps-1">Account Settings</span>
-                    
-                  </MenuItem>
-                  <MenuItem>
-                    
-                      <img
-                        alt="icon"
-                        loading="lazy"
-                        width="19"
-                        height="23"
-                        decoding="async"
-                        data-nimg="1"
-                        className="lazy-img"
-                        style={{ color: "transparent" }}
-                        src="https://jobi-nextjs.vercel.app/_next/static/media/icon_25.b0559e8f.svg"
-                      />
-                      <span className="ms-2 ps-1">Notification</span>
-                    
+                  <MenuItem
+                    sx={{ gap: "15px" }}
+                    className={activeMenu === "settings" ? "active" : ""}
+                    onClick={() => handleMenuClick("settings")}
+                  >
+                    <img
+                      alt="icon"
+                      loading="lazy"
+                      width="21"
+                      height="22"
+                      decoding="async"
+                      data-nimg="1"
+                      className="lazy-img"
+                      style={{ color: "transparent" }}
+                      src="https://jobi-nextjs.vercel.app/_next/static/media/icon_24.0ace9f1a.svg"
+                    />
+                    <Link to="/accountSettings">
+                      <span>Account Settings</span>
+                    </Link>
                   </MenuItem>
                 </Menu>
               </div>

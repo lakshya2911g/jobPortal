@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "./jobsaved.css";
-import {Card} from '@mui/material';
+import { Card, Menu, MenuItem, MenuList, Typography } from "@mui/material";
 
 const JobSaved = () => {
+  // notification dropdown
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [drop, setDrop] = useState(false);
+  const handleDropClick = (e) => {
+    setAnchorEl(e.currentTarget);
+    setDrop(true);
+  };
+  const handleDropClose = () => {
+    setAnchorEl(null);
+    setDrop(false);
+  };
+
+  const [content, setContent] = useState("");
+
+  const handleContentChange = (event) => {
+    setContent(event.target.value);
+  };
+
   return (
     <div>
       <div className="__variable_e76efa __variable_95782f">
@@ -35,9 +54,10 @@ const JobSaved = () => {
                       className="noti-btn dropdown-toggle"
                       type="button"
                       id="notification-dropdown"
-                      data-bs-toggle="dropdown"
-                      data-bs-auto-close="outside"
-                      aria-expanded="false"
+                      aria-controls={drop ? "basic-menu" : undefined}
+                      aria-haspopup="true"
+                      aria-expanded={drop ? "true" : undefined}
+                      onClick={handleDropClick}
                     >
                       <img
                         alt="Notification"
@@ -47,19 +67,26 @@ const JobSaved = () => {
                         decoding="async"
                         data-nimg="1"
                         className="lazy-img"
-                        style={{ color: "transparent" }}
                         src="https://jobi-nextjs.vercel.app/_next/static/media/icon_11.32f89e94.svg"
+                        style={{ color: "transparent" }}
                       />
                       <div className="badge-pill"></div>
                     </button>
-                    <ul
-                      className="dropdown-menu"
-                      aria-labelledby="notification-dropdown"
+                    <Menu
+                      //className="dropdown-menu"
+                      //aria-labelledby="notification-dropdown"
+                      anchorEl={anchorEl}
+                      open={drop}
+                      onClose={handleDropClose}
                     >
-                      <li>
-                        <h4>Notification</h4>
-                        <ul className="style-none notify-list">
-                          <li className="d-flex align-items-center unread">
+                      <MenuItem
+                        sx={{ display: "flex", flexDirection: "column" }}
+                      >
+                        <MenuList className="style-none notify-list">
+                          <MenuItem
+                            sx={{ gap: "15px" }}
+                            className="d-flex align-items-center unread"
+                          >
                             <img
                               alt="icon"
                               loading="lazy"
@@ -68,15 +95,20 @@ const JobSaved = () => {
                               decoding="async"
                               data-nimg="1"
                               className="lazy-img icon"
+                              src="https://jobi-nextjs.vercel.app/_next/static/media/icon_36.d044b698.svg"
                               style={{ color: "transparent" }}
-                              src="../../_next/static/media/icon_36.d044b698.svg"
                             />
                             <div className="flex-fill ps-2">
-                              <h6>You have 3 new mails</h6>
+                              <Typography variant="inherit">
+                                You have 3 new mails
+                              </Typography>
                               <span className="time">3 hours ago</span>
                             </div>
-                          </li>
-                          <li className="d-flex align-items-center">
+                          </MenuItem>
+                          <MenuItem
+                            sx={{ gap: "15px" }}
+                            className="d-flex align-items-center"
+                          >
                             <img
                               alt="icon"
                               loading="lazy"
@@ -85,15 +117,20 @@ const JobSaved = () => {
                               decoding="async"
                               data-nimg="1"
                               className="lazy-img icon"
+                              src="https://jobi-nextjs.vercel.app/_next/static/media/icon_37.34c12156.svg"
                               style={{ color: "transparent" }}
-                              src="../../_next/static/media/icon_37.34c12156.svg"
                             />
                             <div className="flex-fill ps-2">
-                              <h6>You have 5 new mails</h6>
+                              <Typography variant="inherit">
+                                You have 5 new mails
+                              </Typography>
                               <span className="time">6 hours ago</span>
                             </div>
-                          </li>
-                          <li className="d-flex align-items-center unread">
+                          </MenuItem>
+                          <MenuItem
+                            sx={{ gap: "15px" }}
+                            className="d-flex align-items-center unread"
+                          >
                             <img
                               alt="icon"
                               loading="lazy"
@@ -102,17 +139,19 @@ const JobSaved = () => {
                               decoding="async"
                               data-nimg="1"
                               className="lazy-img icon"
+                              src="https://jobi-nextjs.vercel.app/_next/static/media/icon_38.2db06cc7.svg"
                               style={{ color: "transparent" }}
-                              src="../../_next/static/media/icon_38.2db06cc7.svg"
                             />
                             <div className="flex-fill ps-2">
-                              <h6>You have 7 new mails</h6>
+                              <Typography variant="inherit">
+                                You have 7 new mails
+                              </Typography>
                               <span className="time">9 hours ago</span>
                             </div>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
+                          </MenuItem>
+                        </MenuList>
+                      </MenuItem>
+                    </Menu>
                   </div>
                   <div>
                     <a
@@ -161,10 +200,7 @@ const JobSaved = () => {
 
               <div className="wrapper">
                 <div className="job-list-one style-two position-relative mb-20">
-                  
-
                   <div className="row justify-content-between align-items-center">
-
                     <div className="col-xxl-3 col-lg-4">
                       <div className="job-title d-flex align-items-center">
                         <a href="#" className="logo">
@@ -177,7 +213,6 @@ const JobSaved = () => {
                             data-nimg="1"
                             className="lazy-img m-auto"
                             style={{ color: "transparent" }}
-                            
                             src="https://jobi-nextjs.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fmedia_22.142b36c3.png&w=64&q=75"
                           />
                         </a>
@@ -187,9 +222,10 @@ const JobSaved = () => {
                       </div>
                     </div>
 
-                    
-
-                    <div style={{marginTop:"10px" }} className="col-lg-3 col-md-4 col-sm-6 ms-auto">
+                    <div
+                      style={{ marginTop: "10px" }}
+                      className="col-lg-3 col-md-4 col-sm-6 ms-auto"
+                    >
                       <a
                         className="job-duration fw-500"
                         href="../../job-details-v1/28.html"
@@ -197,12 +233,15 @@ const JobSaved = () => {
                         Fixed-Price
                       </a>
                       <div className="job-salary">
-                        <span  className="fw-500 text-dark">$3500</span>/ Monthly
+                        <span className="fw-500 text-dark">$3500</span>/ Monthly
                         . Fresher
                       </div>
                     </div>
 
-                    <div style={{marginTop:"10px"}} className="col-xxl-2 col-lg-3 col-md-4 col-sm-6 ms-auto xs-mt-10">
+                    <div
+                      style={{ marginTop: "10px" }}
+                      className="col-xxl-2 col-lg-3 col-md-4 col-sm-6 ms-auto xs-mt-10"
+                    >
                       <div className="job-location">
                         <a href="#">USA, Palo Alto</a>
                       </div>
@@ -212,12 +251,9 @@ const JobSaved = () => {
                       </div>
                     </div>
 
-                    
-
-                    <div  className="col-lg-2 col-md-4">
+                    <div className="col-lg-2 col-md-4">
                       <div className="action-dots float-end">
                         <button
-                          
                           className="action-btn dropdown-toggle"
                           type="button"
                           data-bs-toggle="dropdown"
@@ -294,7 +330,6 @@ const JobSaved = () => {
                       </div>
                     </div>
                   </div>
-                  
                 </div>
 
                 <div className="job-list-one style-two position-relative mb-20">
@@ -323,7 +358,10 @@ const JobSaved = () => {
                         </a>
                       </div>
                     </div>
-                    <div style={{marginTop:"10px"}} className="col-lg-3 col-md-4 col-sm-6 ms-auto">
+                    <div
+                      style={{ marginTop: "10px" }}
+                      className="col-lg-3 col-md-4 col-sm-6 ms-auto"
+                    >
                       <a
                         className="job-duration fw-500"
                         href="../../job-details-v1/27.html"
@@ -335,7 +373,10 @@ const JobSaved = () => {
                         . No-Experience
                       </div>
                     </div>
-                    <div style={{marginTop:"10px"}} className="col-xxl-2 col-lg-3 col-md-4 col-sm-6 ms-auto xs-mt-10">
+                    <div
+                      style={{ marginTop: "10px" }}
+                      className="col-xxl-2 col-lg-3 col-md-4 col-sm-6 ms-auto xs-mt-10"
+                    >
                       <div className="job-location">
                         <a href="#">USA, New York</a>
                       </div>
@@ -450,7 +491,10 @@ const JobSaved = () => {
                         </a>
                       </div>
                     </div>
-                    <div style={{marginTop:"10px"}} className="col-lg-3 col-md-4 col-sm-6 ms-auto">
+                    <div
+                      style={{ marginTop: "10px" }}
+                      className="col-lg-3 col-md-4 col-sm-6 ms-auto"
+                    >
                       <a
                         className="job-duration fw-500 part-time"
                         href="../../job-details-v1/26.html"
@@ -462,7 +506,10 @@ const JobSaved = () => {
                         . Expert
                       </div>
                     </div>
-                    <div style={{marginTop:"10px"}} className="col-xxl-2 col-lg-3 col-md-4 col-sm-6 ms-auto xs-mt-10">
+                    <div
+                      style={{ marginTop: "10px" }}
+                      className="col-xxl-2 col-lg-3 col-md-4 col-sm-6 ms-auto xs-mt-10"
+                    >
                       <div className="job-location">
                         <a href="#">USA, San Jose</a>
                       </div>
@@ -577,7 +624,10 @@ const JobSaved = () => {
                         </a>
                       </div>
                     </div>
-                    <div style={{marginTop:"10px"}} className="col-lg-3 col-md-4 col-sm-6 ms-auto">
+                    <div
+                      style={{ marginTop: "10px" }}
+                      className="col-lg-3 col-md-4 col-sm-6 ms-auto"
+                    >
                       <a
                         className="job-duration fw-500"
                         href="../../job-details-v1/25.html"
@@ -589,7 +639,10 @@ const JobSaved = () => {
                         . Internship
                       </div>
                     </div>
-                    <div style={{marginTop:"10px"}} className="col-xxl-2 col-lg-3 col-md-4 col-sm-6 ms-auto xs-mt-10">
+                    <div
+                      style={{ marginTop: "10px" }}
+                      className="col-xxl-2 col-lg-3 col-md-4 col-sm-6 ms-auto xs-mt-10"
+                    >
                       <div className="job-location">
                         <a href="#">UK, Cupertino</a>
                       </div>

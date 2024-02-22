@@ -1,8 +1,31 @@
-import React from "react";
-import { Card, CardContent, CardMedia, Grid, Typography, Box } from "@mui/material";
+import React, { useState } from "react";
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Grid,
+  Typography,
+  Box,
+  Menu,
+  MenuItem,
+  MenuList,
+} from "@mui/material";
 import "./dashboard.css";
 
 const Dashboard = () => {
+  // notifiacation dropdown
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [drop, setDrop] = useState(false);
+  const handleDropClick = (e) => {
+    setAnchorEl(e.currentTarget);
+    setDrop(true);
+  };
+  const handleDropClose = () => {
+    setAnchorEl(null);
+    setDrop(false);
+  };
+
   return (
     <div className="dashboard-body">
       <div className="position-relative">
@@ -32,9 +55,10 @@ const Dashboard = () => {
                 className="noti-btn dropdown-toggle"
                 type="button"
                 id="notification-dropdown"
-                data-bs-toggle="dropdown"
-                data-bs-auto-close="outside"
-                aria-expanded="false"
+                aria-controls={drop ? "basic-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={drop ? "true" : undefined}
+                onClick={handleDropClick}
               >
                 <img
                   alt="Notification"
@@ -49,14 +73,19 @@ const Dashboard = () => {
                 />
                 <div className="badge-pill"></div>
               </button>
-              <ul
-                className="dropdown-menu"
-                aria-labelledby="notification-dropdown"
+              <Menu
+                //className="dropdown-menu"
+                //aria-labelledby="notification-dropdown"
+                anchorEl={anchorEl}
+                open={drop}
+                onClose={handleDropClose}
               >
-                <li>
-                  <h4>Notification</h4>
-                  <ul className="style-none notify-list">
-                    <li className="d-flex align-items-center unread">
+                <MenuItem sx={{ display: "flex", flexDirection: "column" }}>
+                  <MenuList className="style-none notify-list">
+                    <MenuItem
+                      sx={{ gap: "15px" }}
+                      className="d-flex align-items-center unread"
+                    >
                       <img
                         alt="icon"
                         loading="lazy"
@@ -69,11 +98,16 @@ const Dashboard = () => {
                         style={{ color: "transparent" }}
                       />
                       <div className="flex-fill ps-2">
-                        <h6>You have 3 new mails</h6>
+                        <Typography variant="inherit">
+                          You have 3 new mails
+                        </Typography>
                         <span className="time">3 hours ago</span>
                       </div>
-                    </li>
-                    <li className="d-flex align-items-center">
+                    </MenuItem>
+                    <MenuItem
+                      sx={{ gap: "15px" }}
+                      className="d-flex align-items-center"
+                    >
                       <img
                         alt="icon"
                         loading="lazy"
@@ -86,11 +120,16 @@ const Dashboard = () => {
                         style={{ color: "transparent" }}
                       />
                       <div className="flex-fill ps-2">
-                        <h6>You have 5 new mails</h6>
+                        <Typography variant="inherit">
+                          You have 5 new mails
+                        </Typography>
                         <span className="time">6 hours ago</span>
                       </div>
-                    </li>
-                    <li className="d-flex align-items-center unread">
+                    </MenuItem>
+                    <MenuItem
+                      sx={{ gap: "15px" }}
+                      className="d-flex align-items-center unread"
+                    >
                       <img
                         alt="icon"
                         loading="lazy"
@@ -103,13 +142,15 @@ const Dashboard = () => {
                         style={{ color: "transparent" }}
                       />
                       <div className="flex-fill ps-2">
-                        <h6>You have 7 new mails</h6>
+                        <Typography variant="inherit">
+                          You have 7 new mails
+                        </Typography>
                         <span className="time">9 hours ago</span>
                       </div>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
+                    </MenuItem>
+                  </MenuList>
+                </MenuItem>
+              </Menu>
             </div>
             <div>
               <a
@@ -131,40 +172,42 @@ const Dashboard = () => {
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
-                  
+
                   height: "75%",
                   padding: "0 20px 0 20px",
                   marginLeft: "18px",
-                  borderRadius:"25px"
+                  borderRadius: "25px",
                 }}
               >
                 <div className="col-lg-3 col-6">
                   <div className="dash-card-one bg-white border-30 position-relative mb-15">
                     <div className="d-sm-flex align-items-center justify-content-between">
-                      {<CardContent>
-                        <div  className="order-sm-0">
-                          <div  className="value fw-500">
-                            <Typography
-                              variant="inherit"
-                              color="textSecondary"
-                              component="h2"
-                            >
-                              1.7k+
-                            </Typography>
+                      {
+                        <CardContent>
+                          <div className="order-sm-0">
+                            <div className="value fw-500">
+                              <Typography
+                                variant="inherit"
+                                color="textSecondary"
+                                component="h2"
+                              >
+                                1.7k+
+                              </Typography>
+                            </div>
+                            <span>
+                              <Typography
+                                gutterBottom
+                                variant="inherit"
+                                component="h9"
+                              >
+                                Total Visitor
+                              </Typography>
+                            </span>
                           </div>
-                          <span>
-                            <Typography
-                              gutterBottom
-                              variant="inherit"
-                              component="h9"
-                            >
-                              Total Visitor
-                            </Typography>
-                          </span>
-                        </div>
-                      </CardContent>}
+                        </CardContent>
+                      }
 
-                      <CardMedia >
+                      <CardMedia>
                         <div className="icon rounded-circle d-flex align-items-center justify-content-center order-sm-1">
                           <img
                             alt="icon"
@@ -194,7 +237,7 @@ const Dashboard = () => {
                   height: "75%",
                   padding: "0 20px 0 20px",
                   marginLeft: "18px",
-                  borderRadius:"25px"
+                  borderRadius: "25px",
                 }}
               >
                 <div className="col-lg-3 col-6">
@@ -253,7 +296,7 @@ const Dashboard = () => {
                   height: "75%",
                   padding: "0 20px 0 20px",
                   marginLeft: "18px",
-                  borderRadius:"25px"
+                  borderRadius: "25px",
                 }}
               >
                 <div className="col-lg-3 col-6">
@@ -312,7 +355,7 @@ const Dashboard = () => {
                   height: "75%",
                   padding: "0px 20px 0 20px",
                   marginLeft: "18px",
-                  borderRadius:"25px"
+                  borderRadius: "25px",
                 }}
               >
                 <div className="col-lg-3 col-6">
@@ -364,8 +407,19 @@ const Dashboard = () => {
           </Grid>
         </div>
 
-        <div style={{display:"flex", justifyContent:"center"}} className="row d-flex pt-50 lg-pt-10">
-          <Box style={{backgroundColor:"white", borderRadius:"20px", margin:"30px", width:"400px"}} className="col-xl-7 col-lg-6 d-flex flex-column">
+        <div
+          style={{ display: "flex", justifyContent: "center" }}
+          className="row d-flex pt-50 lg-pt-10"
+        >
+          <Box
+            style={{
+              backgroundColor: "white",
+              borderRadius: "20px",
+              margin: "30px",
+              width: "400px",
+            }}
+            className="col-xl-7 col-lg-6 d-flex flex-column"
+          >
             <div className="user-activity-chart bg-white border-20 mt-30 h-100">
               <h4 className="dash-title-two">Profile Views</h4>
               <div className="ps-5 pe-5 mt-50">
@@ -388,7 +442,15 @@ const Dashboard = () => {
             </div>
           </Box>
 
-          <Box style={{backgroundColor:"white", borderRadius:"20px", margin:"30px", width:"400px"}} className="col-xl-5 col-lg-6 d-flex">
+          <Box
+            style={{
+              backgroundColor: "white",
+              borderRadius: "20px",
+              margin: "30px",
+              width: "400px",
+            }}
+            className="col-xl-5 col-lg-6 d-flex"
+          >
             <div className="recent-job-tab bg-white border-20 mt-30 w-100">
               <h4 className="dash-title-two">Recent Applied Job</h4>
               <div className="wrapper">

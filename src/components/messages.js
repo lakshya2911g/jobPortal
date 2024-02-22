@@ -1,8 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "./messages.css";
-import { Box } from "@mui/material";
+import { Box, Menu, MenuItem, MenuList, Typography } from "@mui/material";
 
 const Messages = () => {
+  // notification dropdown
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [drop, setDrop] = useState(false);
+  const handleDropClick = (e) => {
+    setAnchorEl(e.currentTarget);
+    setDrop(true);
+  };
+  const handleDropClose = () => {
+    setAnchorEl(null);
+    setDrop(false);
+  };
+
+  const [content, setContent] = useState("");
+
+  const handleContentChange = (event) => {
+    setContent(event.target.value);
+  };
+
   return (
     <div class="dashboard-body">
       <div class="position-relative">
@@ -27,14 +46,15 @@ const Messages = () => {
                 />
               </button>
             </form>
-            <div class="profile-notification ms-2 ms-md-5 me-4">
+            <div className="profile-notification ms-2 ms-md-5 me-4">
               <button
-                class="noti-btn dropdown-toggle"
+                className="noti-btn dropdown-toggle"
                 type="button"
                 id="notification-dropdown"
-                data-bs-toggle="dropdown"
-                data-bs-auto-close="outside"
-                aria-expanded="false"
+                aria-controls={drop ? "basic-menu" : undefined}
+                aria-haspopup="true"
+                aria-expanded={drop ? "true" : undefined}
+                onClick={handleDropClick}
               >
                 <img
                   alt="Notification"
@@ -43,17 +63,25 @@ const Messages = () => {
                   height="24"
                   decoding="async"
                   data-nimg="1"
-                  class="lazy-img"
+                  className="lazy-img"
                   src="https://jobi-nextjs.vercel.app/_next/static/media/icon_11.32f89e94.svg"
                   style={{ color: "transparent" }}
                 />
-                <div class="badge-pill"></div>
+                <div className="badge-pill"></div>
               </button>
-              <ul class="dropdown-menu" aria-labelledby="notification-dropdown">
-                <li>
-                  <h4>Notification</h4>
-                  <ul class="style-none notify-list">
-                    <li class="d-flex align-items-center unread">
+              <Menu
+                //className="dropdown-menu"
+                //aria-labelledby="notification-dropdown"
+                anchorEl={anchorEl}
+                open={drop}
+                onClose={handleDropClose}
+              >
+                <MenuItem sx={{ display: "flex", flexDirection: "column" }}>
+                  <MenuList className="style-none notify-list">
+                    <MenuItem
+                      sx={{ gap: "15px" }}
+                      className="d-flex align-items-center unread"
+                    >
                       <img
                         alt="icon"
                         loading="lazy"
@@ -61,16 +89,21 @@ const Messages = () => {
                         height="36"
                         decoding="async"
                         data-nimg="1"
-                        class="lazy-img icon"
+                        className="lazy-img icon"
                         src="https://jobi-nextjs.vercel.app/_next/static/media/icon_36.d044b698.svg"
                         style={{ color: "transparent" }}
                       />
-                      <div class="flex-fill ps-2">
-                        <h6>You have 3 new mails</h6>
-                        <span class="time">3 hours ago</span>
+                      <div className="flex-fill ps-2">
+                        <Typography variant="inherit">
+                          You have 3 new mails
+                        </Typography>
+                        <span className="time">3 hours ago</span>
                       </div>
-                    </li>
-                    <li class="d-flex align-items-center ">
+                    </MenuItem>
+                    <MenuItem
+                      sx={{ gap: "15px" }}
+                      className="d-flex align-items-center"
+                    >
                       <img
                         alt="icon"
                         loading="lazy"
@@ -78,16 +111,21 @@ const Messages = () => {
                         height="36"
                         decoding="async"
                         data-nimg="1"
-                        class="lazy-img icon"
+                        className="lazy-img icon"
                         src="https://jobi-nextjs.vercel.app/_next/static/media/icon_37.34c12156.svg"
                         style={{ color: "transparent" }}
                       />
-                      <div class="flex-fill ps-2">
-                        <h6>You have 5 new mails</h6>
-                        <span class="time">6 hours ago</span>
+                      <div className="flex-fill ps-2">
+                        <Typography variant="inherit">
+                          You have 5 new mails
+                        </Typography>
+                        <span className="time">6 hours ago</span>
                       </div>
-                    </li>
-                    <li class="d-flex align-items-center unread">
+                    </MenuItem>
+                    <MenuItem
+                      sx={{ gap: "15px" }}
+                      className="d-flex align-items-center unread"
+                    >
                       <img
                         alt="icon"
                         loading="lazy"
@@ -95,18 +133,20 @@ const Messages = () => {
                         height="36"
                         decoding="async"
                         data-nimg="1"
-                        class="lazy-img icon"
+                        className="lazy-img icon"
                         src="https://jobi-nextjs.vercel.app/_next/static/media/icon_38.2db06cc7.svg"
                         style={{ color: "transparent" }}
                       />
-                      <div class="flex-fill ps-2">
-                        <h6>You have 7 new mails</h6>
-                        <span class="time">9 hours ago</span>
+                      <div className="flex-fill ps-2">
+                        <Typography variant="inherit">
+                          You have 7 new mails
+                        </Typography>
+                        <span className="time">9 hours ago</span>
                       </div>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
+                    </MenuItem>
+                  </MenuList>
+                </MenuItem>
+              </Menu>
             </div>
             <div>
               <a
@@ -288,7 +328,14 @@ const Messages = () => {
             </div>
           </div>
           <div class="col-lg-8">
-            <Box sx={{  marginTop:"20px", display:"flex", justifyContent:"space-evenly"}} class="message-pagination ps-lg-4 ps-xxl-5 d-flex align-items-center justify-content-between md-mt-40">
+            <Box
+              sx={{
+                marginTop: "20px",
+                display: "flex",
+                justifyContent: "space-evenly",
+              }}
+              class="message-pagination ps-lg-4 ps-xxl-5 d-flex align-items-center justify-content-between md-mt-40"
+            >
               <a href="#" class="prev-msg">
                 <img
                   alt="icon"
@@ -321,7 +368,7 @@ const Messages = () => {
                   data-nimg="1"
                   class="lazy-img"
                   src="https://jobi-nextjs.vercel.app/_next/static/media/icon_27.69de0fc6.svg"
-                  style={{ color: "transparent", marginRight:"25px" }}
+                  style={{ color: "transparent", marginRight: "25px" }}
                 />
               </a>
             </Box>
@@ -329,14 +376,17 @@ const Messages = () => {
         </div>
         <div class="bg-white card-box border-20 p0 mt-30">
           <div class="message-wrapper">
-            <Box style={{ display: "flex", justifyContent:"center", gap:"10px" }} class="row gx-0">
+            <Box
+              style={{ display: "flex", justifyContent: "center", gap: "10px" }}
+              class="row gx-0"
+            >
               <Box
                 style={{
                   backgroundColor: "white",
                   width: "400px",
                   marginLeft: "20px",
                   marginRight: "20px",
-                  borderRadius:"25px"
+                  borderRadius: "25px",
                 }}
                 class="col-lg-4"
               >
@@ -526,7 +576,7 @@ const Messages = () => {
                   width: "470px",
                   marginLeft: "20px",
                   marginRight: "20px",
-                  borderRadius:"25px"
+                  borderRadius: "25px",
                 }}
                 class="col-lg-8"
               >

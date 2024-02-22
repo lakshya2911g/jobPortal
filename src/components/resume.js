@@ -7,10 +7,31 @@ import {
   FormControl,
   InputLabel,
   Select,
+  Menu,
   MenuItem,
+  MenuList,
+  Typography,
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
 } from "@mui/material";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const Resume = () => {
+  // notification dropdown
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [drop, setDrop] = useState(false);
+  const handleDropClick = (e) => {
+    setAnchorEl(e.currentTarget);
+    setDrop(true);
+  };
+  const handleDropClose = () => {
+    setAnchorEl(null);
+    setDrop(false);
+  };
+
+  // year dropdown
   const [content, setContent] = useState("");
 
   const handleContentChange = (event) => {
@@ -49,9 +70,10 @@ const Resume = () => {
                       className="noti-btn dropdown-toggle"
                       type="button"
                       id="notification-dropdown"
-                      data-bs-toggle="dropdown"
-                      data-bs-auto-close="outside"
-                      aria-expanded="false"
+                      aria-controls={drop ? "basic-menu" : undefined}
+                      aria-haspopup="true"
+                      aria-expanded={drop ? "true" : undefined}
+                      onClick={handleDropClick}
                     >
                       <img
                         alt="Notification"
@@ -61,19 +83,26 @@ const Resume = () => {
                         decoding="async"
                         data-nimg="1"
                         className="lazy-img"
-                        style={{ color: "transparent" }}
                         src="https://jobi-nextjs.vercel.app/_next/static/media/icon_11.32f89e94.svg"
+                        style={{ color: "transparent" }}
                       />
                       <div className="badge-pill"></div>
                     </button>
-                    <ul
-                      className="dropdown-menu"
-                      aria-labelledby="notification-dropdown"
+                    <Menu
+                      //className="dropdown-menu"
+                      //aria-labelledby="notification-dropdown"
+                      anchorEl={anchorEl}
+                      open={drop}
+                      onClose={handleDropClose}
                     >
-                      <li>
-                        <h4>Notification</h4>
-                        <ul className="style-none notify-list">
-                          <li className="d-flex align-items-center unread">
+                      <MenuItem
+                        sx={{ display: "flex", flexDirection: "column" }}
+                      >
+                        <MenuList className="style-none notify-list">
+                          <MenuItem
+                            sx={{ gap: "15px" }}
+                            className="d-flex align-items-center unread"
+                          >
                             <img
                               alt="icon"
                               loading="lazy"
@@ -82,15 +111,20 @@ const Resume = () => {
                               decoding="async"
                               data-nimg="1"
                               className="lazy-img icon"
+                              src="https://jobi-nextjs.vercel.app/_next/static/media/icon_36.d044b698.svg"
                               style={{ color: "transparent" }}
-                              src="../../_next/static/media/icon_36.d044b698.svg"
                             />
                             <div className="flex-fill ps-2">
-                              <h6>You have 3 new mails</h6>
+                              <Typography variant="inherit">
+                                You have 3 new mails
+                              </Typography>
                               <span className="time">3 hours ago</span>
                             </div>
-                          </li>
-                          <li className="d-flex align-items-center">
+                          </MenuItem>
+                          <MenuItem
+                            sx={{ gap: "15px" }}
+                            className="d-flex align-items-center"
+                          >
                             <img
                               alt="icon"
                               loading="lazy"
@@ -99,15 +133,20 @@ const Resume = () => {
                               decoding="async"
                               data-nimg="1"
                               className="lazy-img icon"
+                              src="https://jobi-nextjs.vercel.app/_next/static/media/icon_37.34c12156.svg"
                               style={{ color: "transparent" }}
-                              src="../../_next/static/media/icon_37.34c12156.svg"
                             />
                             <div className="flex-fill ps-2">
-                              <h6>You have 5 new mails</h6>
+                              <Typography variant="inherit">
+                                You have 5 new mails
+                              </Typography>
                               <span className="time">6 hours ago</span>
                             </div>
-                          </li>
-                          <li className="d-flex align-items-center unread">
+                          </MenuItem>
+                          <MenuItem
+                            sx={{ gap: "15px" }}
+                            className="d-flex align-items-center unread"
+                          >
                             <img
                               alt="icon"
                               loading="lazy"
@@ -116,17 +155,19 @@ const Resume = () => {
                               decoding="async"
                               data-nimg="1"
                               className="lazy-img icon"
+                              src="https://jobi-nextjs.vercel.app/_next/static/media/icon_38.2db06cc7.svg"
                               style={{ color: "transparent" }}
-                              src="../../_next/static/media/icon_38.2db06cc7.svg"
                             />
                             <div className="flex-fill ps-2">
-                              <h6>You have 7 new mails</h6>
+                              <Typography variant="inherit">
+                                You have 7 new mails
+                              </Typography>
                               <span className="time">9 hours ago</span>
                             </div>
-                          </li>
-                        </ul>
-                      </li>
-                    </ul>
+                          </MenuItem>
+                        </MenuList>
+                      </MenuItem>
+                    </Menu>
                   </div>
                   <div>
                     <a
@@ -195,438 +236,425 @@ const Resume = () => {
                     className="accordion dash-accordion-one"
                     id="accordionOne"
                   >
-                    <div className="accordion-item">
-                      <div className="accordion-header" id="headingOne">
-                        <button
-                          className="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseOne"
-                          aria-expanded="false"
-                          aria-controls="collapseOne"
-                        >
-                          Add Education*
-                        </button>
-                      </div>
-                      <div
-                        id="collapseOne"
-                        className="accordion-collapse collapse"
-                        aria-labelledby="headingOne"
-                        data-bs-parent="#accordionOne"
+                    <Accordion className="accordion-item">
+                      <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1-content"
+                        className="accordion-header"
+                        id="headingOne"
                       >
-                        <div className="accordion-body">
-                          <div className="row">
-                            <div className="col-lg-2">
-                              <div className="dash-input-wrapper mb-30 md-mb-10">
-                                <label for="">Title*</label>
-                              </div>
-                            </div>
-                            <div className="col-lg-10">
-                              <div className="dash-input-wrapper mb-30">
-                                <input
-                                  type="text"
-                                  placeholder="Product Designer (Google)"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <div className="row">
-                            <div className="col-lg-2">
-                              <div className="dash-input-wrapper mb-30 md-mb-10">
-                                <label for="">Academy*</label>
-                              </div>
-                            </div>
-                            <div className="col-lg-10">
-                              <div className="dash-input-wrapper mb-30">
-                                <input
-                                  type="text"
-                                  placeholder="Google Arts Collage &amp; University"
-                                />
-                              </div>
-                            </div>
-                          </div>
-                          <div className="row">
-                            <div className="col-lg-2">
-                              <div className="dash-input-wrapper mb-30 md-mb-10">
-                                <label for="">Year*</label>
-                              </div>
-                            </div>
-                            <div className="col-lg-10">
-                              <div className="row">
-                                <Box
-                                  sx={{ minWidth: 120 }}
-                                  className="dash-input-wrapper mb-25"
-                                >
-                                  <FormControl fullWidth>
-                                    <InputLabel id="demo-simple-select-label">
-                                      From
-                                    </InputLabel>
+                        Add Education*
+                      </AccordionSummary>
 
-                                    <Select
-                                      className="list"
-                                      role="menubar"
-                                      labelId="demo-simple-select-label"
-                                      id="demo-simple-select"
-                                      value={content}
-                                      label="From"
-                                      onChange={handleContentChange}
-                                    >
-                                      <MenuItem
-                                        value={1}
-                                        className="option selected focus"
-                                        role="menuitem"
-                                      >
-                                        2024
-                                      </MenuItem>
-                                      <MenuItem
-                                        value={2}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2023
-                                      </MenuItem>
-                                      <MenuItem
-                                        value={3}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2022
-                                      </MenuItem>
-                                      <MenuItem
-                                        value={4}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2021
-                                      </MenuItem>
-                                      <MenuItem
-                                        value={5}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2020
-                                      </MenuItem>
-                                      <MenuItem
-                                        value={6}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2019
-                                      </MenuItem>
-                                      <MenuItem
-                                        dvalue={7}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2018
-                                      </MenuItem>
-                                    </Select>
-                                  </FormControl>
-                                </Box>
-                                <Box
-                                  sx={{ minWidth: 120 }}
-                                  className="dash-input-wrapper mb-25"
-                                >
-                                  <FormControl fullWidth>
-                                    <InputLabel id="demo-simple-select-label">
-                                      To
-                                    </InputLabel>
-
-                                    <Select
-                                      className="list"
-                                      role="menubar"
-                                      labelId="demo-simple-select-label"
-                                      id="demo-simple-select"
-                                      value={content}
-                                      label="To"
-                                      onChange={handleContentChange}
-                                    >
-                                      <MenuItem
-                                        value={1}
-                                        className="option selected focus"
-                                        role="menuitem"
-                                      >
-                                        2024
-                                      </MenuItem>
-                                      <MenuItem
-                                        value={2}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2023
-                                      </MenuItem>
-                                      <MenuItem
-                                        value={3}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2022
-                                      </MenuItem>
-                                      <MenuItem
-                                        value={4}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2021
-                                      </MenuItem>
-                                      <MenuItem
-                                        value={5}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2020
-                                      </MenuItem>
-                                      <MenuItem
-                                        value={6}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2019
-                                      </MenuItem>
-                                      <MenuItem
-                                        dvalue={7}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2018
-                                      </MenuItem>
-                                    </Select>
-                                  </FormControl>
-                                </Box>
-                              </div>
+                      <AccordionDetails className="accordion-body">
+                        <div className="row">
+                          <div className="col-lg-2">
+                            <div className="dash-input-wrapper mb-30 md-mb-10">
+                              <label for="">Title*</label>
                             </div>
                           </div>
-                          <div className="row">
-                            <div className="col-lg-2">
-                              <div className="dash-input-wrapper mb-30 md-mb-10">
-                                <label for="">Description*</label>
-                              </div>
-                            </div>
-                            <div className="col-lg-10">
-                              <div className="dash-input-wrapper mb-30">
-                                <textarea
-                                  className="size-lg"
-                                  placeholder="Morbi ornare ipsum sed sem condimentum, et pulvinar tortor luctus. Suspendisse condimentum lorem ut elementum aliquam et pulvinar tortor luctus."
-                                ></textarea>
-                              </div>
+                          <div className="col-lg-10">
+                            <div className="dash-input-wrapper mb-30">
+                              <input
+                                type="text"
+                                placeholder="Product Designer (Google)"
+                              />
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div className="accordion-item">
-                      <div className="accordion-header" id="headingTwo">
-                        <button
-                          className="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseTwo"
-                          aria-expanded="false"
-                          aria-controls="collapseTwo"
-                        >
-                          Add Education*
-                        </button>
-                      </div>
-                      <div
-                        id="collapseTwo"
-                        className="accordion-collapse collapse show"
-                        aria-labelledby="headingTwo"
-                        data-bs-parent="#accordionOne"
-                      >
-                        <div className="accordion-body">
-                          <div className="row">
-                            <div className="col-lg-2">
-                              <div className="dash-input-wrapper mb-30 md-mb-10">
-                                <label for="">Title*</label>
-                              </div>
-                            </div>
-                            <div className="col-lg-10">
-                              <div className="dash-input-wrapper mb-30">
-                                <input
-                                  type="text"
-                                  placeholder="Product Designer (Google)"
-                                />
-                              </div>
+                        <div className="row">
+                          <div className="col-lg-2">
+                            <div className="dash-input-wrapper mb-30 md-mb-10">
+                              <label for="">Academy*</label>
                             </div>
                           </div>
-                          <div className="row">
-                            <div className="col-lg-2">
-                              <div className="dash-input-wrapper mb-30 md-mb-10">
-                                <label for="">Academy*</label>
-                              </div>
-                            </div>
-                            <div className="col-lg-10">
-                              <div className="dash-input-wrapper mb-30">
-                                <input
-                                  type="text"
-                                  placeholder="Google Arts Collage &amp; University"
-                                />
-                              </div>
+                          <div className="col-lg-10">
+                            <div className="dash-input-wrapper mb-30">
+                              <input
+                                type="text"
+                                placeholder="Google Arts Collage &amp; University"
+                              />
                             </div>
                           </div>
-                          <div className="row">
-                            <div className="col-lg-2">
-                              <div className="dash-input-wrapper mb-30 md-mb-10">
-                                <label for="">Year*</label>
-                              </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-lg-2">
+                            <div className="dash-input-wrapper mb-30 md-mb-10">
+                              <label for="">Year*</label>
                             </div>
-                            <div className="col-lg-10">
-                              <Box  className="row">
-                                <Box sx={{maxWidth:"120"}} className="dash-input-wrapper mb-25">
-                                  <FormControl fullWidth>
-                                    <InputLabel id="demo-simple-select-label">
-                                      From
-                                    </InputLabel>
+                          </div>
+                          <div className="col-lg-10">
+                            <div className="row">
+                              <Box
+                                sx={{ minWidth: 120 }}
+                                className="dash-input-wrapper mb-25"
+                              >
+                                <FormControl fullWidth>
+                                  <InputLabel id="demo-simple-select-label">
+                                    From
+                                  </InputLabel>
 
-                                    <Select
-                                      className="list"
-                                      role="menubar"
-                                      labelId="demo-simple-select-label"
-                                      id="demo-simple-select"
-                                      value={content}
-                                      label="From"
-                                      onChange={handleContentChange}
+                                  <Select
+                                    className="list"
+                                    role="menubar"
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={content}
+                                    label="From"
+                                    onChange={handleContentChange}
+                                  >
+                                    <MenuItem
+                                      value={1}
+                                      className="option selected focus"
+                                      role="menuitem"
                                     >
-                                      <MenuItem
-                                        value={1}
-                                        className="option selected focus"
-                                        role="menuitem"
-                                      >
-                                        2024
-                                      </MenuItem>
-                                      <MenuItem
-                                        value={2}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2023
-                                      </MenuItem>
-                                      <MenuItem
-                                        value={3}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2022
-                                      </MenuItem>
-                                      <MenuItem
-                                        value={4}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2021
-                                      </MenuItem>
-                                      <MenuItem
-                                        value={5}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2020
-                                      </MenuItem>
-                                      <MenuItem
-                                        value={6}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2019
-                                      </MenuItem>
-                                      <MenuItem
-                                        dvalue={7}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2018
-                                      </MenuItem>
-                                    </Select>
-                                  </FormControl>
-                                </Box>
-                                <Box sx={{maxWidth:"120"}} className="dash-input-wrapper mb-25">
-                                  <FormControl fullWidth>
-                                    <InputLabel id="demo-simple-select-label">
-                                      To
-                                    </InputLabel>
+                                      2024
+                                    </MenuItem>
+                                    <MenuItem
+                                      value={2}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2023
+                                    </MenuItem>
+                                    <MenuItem
+                                      value={3}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2022
+                                    </MenuItem>
+                                    <MenuItem
+                                      value={4}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2021
+                                    </MenuItem>
+                                    <MenuItem
+                                      value={5}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2020
+                                    </MenuItem>
+                                    <MenuItem
+                                      value={6}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2019
+                                    </MenuItem>
+                                    <MenuItem
+                                      dvalue={7}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2018
+                                    </MenuItem>
+                                  </Select>
+                                </FormControl>
+                              </Box>
+                              <Box
+                                sx={{ minWidth: 120 }}
+                                className="dash-input-wrapper mb-25"
+                              >
+                                <FormControl fullWidth>
+                                  <InputLabel id="demo-simple-select-label">
+                                    To
+                                  </InputLabel>
 
-                                    <Select
-                                      className="list"
-                                      role="menubar"
-                                      labelId="demo-simple-select-label"
-                                      id="demo-simple-select"
-                                      value={content}
-                                      label="To"
-                                      onChange={handleContentChange}
+                                  <Select
+                                    className="list"
+                                    role="menubar"
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={content}
+                                    label="To"
+                                    onChange={handleContentChange}
+                                  >
+                                    <MenuItem
+                                      value={1}
+                                      className="option selected focus"
+                                      role="menuitem"
                                     >
-                                      <MenuItem
-                                        value={1}
-                                        className="option selected focus"
-                                        role="menuitem"
-                                      >
-                                        2024
-                                      </MenuItem>
-                                      <MenuItem
-                                        value={2}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2023
-                                      </MenuItem>
-                                      <MenuItem
-                                        value={3}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2022
-                                      </MenuItem>
-                                      <MenuItem
-                                        value={4}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2021
-                                      </MenuItem>
-                                      <MenuItem
-                                        value={5}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2020
-                                      </MenuItem>
-                                      <MenuItem
-                                        value={6}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2019
-                                      </MenuItem>
-                                      <MenuItem
-                                        dvalue={7}
-                                        className="option false"
-                                        role="menuitem"
-                                      >
-                                        2018
-                                      </MenuItem>
-                                    </Select>
-                                  </FormControl>
-                                </Box>
+                                      2024
+                                    </MenuItem>
+                                    <MenuItem
+                                      value={2}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2023
+                                    </MenuItem>
+                                    <MenuItem
+                                      value={3}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2022
+                                    </MenuItem>
+                                    <MenuItem
+                                      value={4}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2021
+                                    </MenuItem>
+                                    <MenuItem
+                                      value={5}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2020
+                                    </MenuItem>
+                                    <MenuItem
+                                      value={6}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2019
+                                    </MenuItem>
+                                    <MenuItem
+                                      dvalue={7}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2018
+                                    </MenuItem>
+                                  </Select>
+                                </FormControl>
                               </Box>
                             </div>
                           </div>
-                          <div className="row">
-                            <div className="col-lg-2">
-                              <div className="dash-input-wrapper mb-30 md-mb-10">
-                                <label for="">Description*</label>
-                              </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-lg-2">
+                            <div className="dash-input-wrapper mb-30 md-mb-10">
+                              <label for="">Description*</label>
                             </div>
-                            <div className="col-lg-10">
-                              <div className="dash-input-wrapper mb-30">
-                                <textarea
-                                  className="size-lg"
-                                  placeholder="Morbi ornare ipsum sed sem condimentum, et pulvinar tortor luctus. Suspendisse condimentum lorem ut elementum aliquam et pulvinar tortor luctus."
-                                ></textarea>
-                              </div>
+                          </div>
+                          <div className="col-lg-10">
+                            <div className="dash-input-wrapper mb-30">
+                              <textarea
+                                className="size-lg"
+                                placeholder="Morbi ornare ipsum sed sem condimentum, et pulvinar tortor luctus. Suspendisse condimentum lorem ut elementum aliquam et pulvinar tortor luctus."
+                              ></textarea>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
+                      </AccordionDetails>
+                    </Accordion>
+
+                    <Accordion className="accordion-item">
+                      <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1-content"
+                        className="accordion-header"
+                        id="headingOne"
+                      >
+                        Add Education*
+                      </AccordionSummary>
+
+                      <AccordionDetails className="accordion-body">
+                        <div className="row">
+                          <div className="col-lg-2">
+                            <div className="dash-input-wrapper mb-30 md-mb-10">
+                              <label for="">Title*</label>
+                            </div>
+                          </div>
+                          <div className="col-lg-10">
+                            <div className="dash-input-wrapper mb-30">
+                              <input
+                                type="text"
+                                placeholder="Product Designer (Google)"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-lg-2">
+                            <div className="dash-input-wrapper mb-30 md-mb-10">
+                              <label for="">Academy*</label>
+                            </div>
+                          </div>
+                          <div className="col-lg-10">
+                            <div className="dash-input-wrapper mb-30">
+                              <input
+                                type="text"
+                                placeholder="Google Arts Collage &amp; University"
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-lg-2">
+                            <div className="dash-input-wrapper mb-30 md-mb-10">
+                              <label for="">Year*</label>
+                            </div>
+                          </div>
+                          <div className="col-lg-10">
+                            <div className="row">
+                              <Box
+                                sx={{ minWidth: 120 }}
+                                className="dash-input-wrapper mb-25"
+                              >
+                                <FormControl fullWidth>
+                                  <InputLabel id="demo-simple-select-label">
+                                    From
+                                  </InputLabel>
+
+                                  <Select
+                                    className="list"
+                                    role="menubar"
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={content}
+                                    label="From"
+                                    onChange={handleContentChange}
+                                  >
+                                    <MenuItem
+                                      value={1}
+                                      className="option selected focus"
+                                      role="menuitem"
+                                    >
+                                      2024
+                                    </MenuItem>
+                                    <MenuItem
+                                      value={2}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2023
+                                    </MenuItem>
+                                    <MenuItem
+                                      value={3}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2022
+                                    </MenuItem>
+                                    <MenuItem
+                                      value={4}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2021
+                                    </MenuItem>
+                                    <MenuItem
+                                      value={5}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2020
+                                    </MenuItem>
+                                    <MenuItem
+                                      value={6}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2019
+                                    </MenuItem>
+                                    <MenuItem
+                                      dvalue={7}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2018
+                                    </MenuItem>
+                                  </Select>
+                                </FormControl>
+                              </Box>
+                              <Box
+                                sx={{ minWidth: 120 }}
+                                className="dash-input-wrapper mb-25"
+                              >
+                                <FormControl fullWidth>
+                                  <InputLabel id="demo-simple-select-label">
+                                    To
+                                  </InputLabel>
+
+                                  <Select
+                                    className="list"
+                                    role="menubar"
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={content}
+                                    label="To"
+                                    onChange={handleContentChange}
+                                  >
+                                    <MenuItem
+                                      value={1}
+                                      className="option selected focus"
+                                      role="menuitem"
+                                    >
+                                      2024
+                                    </MenuItem>
+                                    <MenuItem
+                                      value={2}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2023
+                                    </MenuItem>
+                                    <MenuItem
+                                      value={3}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2022
+                                    </MenuItem>
+                                    <MenuItem
+                                      value={4}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2021
+                                    </MenuItem>
+                                    <MenuItem
+                                      value={5}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2020
+                                    </MenuItem>
+                                    <MenuItem
+                                      value={6}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2019
+                                    </MenuItem>
+                                    <MenuItem
+                                      dvalue={7}
+                                      className="option false"
+                                      role="menuitem"
+                                    >
+                                      2018
+                                    </MenuItem>
+                                  </Select>
+                                </FormControl>
+                              </Box>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="row">
+                          <div className="col-lg-2">
+                            <div className="dash-input-wrapper mb-30 md-mb-10">
+                              <label for="">Description*</label>
+                            </div>
+                          </div>
+                          <div className="col-lg-10">
+                            <div className="dash-input-wrapper mb-30">
+                              <textarea
+                                className="size-lg"
+                                placeholder="Morbi ornare ipsum sed sem condimentum, et pulvinar tortor luctus. Suspendisse condimentum lorem ut elementum aliquam et pulvinar tortor luctus."
+                              ></textarea>
+                            </div>
+                          </div>
+                        </div>
+                      </AccordionDetails>
+                    </Accordion>
                   </div>
                   <a href="#" className="dash-btn-one">
                     <i className="bi bi-plus"></i> Add more
@@ -699,26 +727,18 @@ const Resume = () => {
                     className="accordion dash-accordion-one"
                     id="accordionTwo"
                   >
-                    <div className="accordion-item">
-                      <div className="accordion-header" id="headingOneA">
-                        <button
-                          className="accordion-button collapsed"
-                          type="button"
-                          data-bs-toggle="collapse"
-                          data-bs-target="#collapseOneA"
-                          aria-expanded="false"
-                          aria-controls="collapseOneA"
-                        >
-                          Experience 1*
-                        </button>
-                      </div>
-                      <div
-                        id="collapseOneA"
-                        className="accordion-collapse collapse"
-                        aria-labelledby="headingOneA"
-                        data-bs-parent="#accordionTwo"
+                    <Accordion className="accordion-item">
+                      <AccordionSummary
+                        expandIcon={<ExpandMoreIcon />}
+                        aria-controls="panel1-content"
+                        
+                        className="accordion-header"
+                        id="headingOne"
                       >
-                        <div className="accordion-body">
+                        Experience 1*
+                      </AccordionSummary>
+                      
+                        <AccordionDetails className="accordion-body">
                           <div className="row">
                             <div className="col-lg-2">
                               <div className="dash-input-wrapper mb-30 md-mb-10">
@@ -729,7 +749,7 @@ const Resume = () => {
                               <div className="dash-input-wrapper mb-30">
                                 <input
                                   type="text"
-                                  placeholder="Lead Product Designer "
+                                  placeholder="Lead Product Designer"
                                 />
                               </div>
                             </div>
@@ -737,12 +757,15 @@ const Resume = () => {
                           <div className="row">
                             <div className="col-lg-2">
                               <div className="dash-input-wrapper mb-30 md-mb-10">
-                                <label for="">Company*</label>
+                                <label for="">company*</label>
                               </div>
                             </div>
                             <div className="col-lg-10">
                               <div className="dash-input-wrapper mb-30">
-                                <input type="text" placeholder="Amazon Inc" />
+                                <input
+                                  type="text"
+                                  placeholder="Amazon Inc"
+                                />
                               </div>
                             </div>
                           </div>
@@ -754,7 +777,10 @@ const Resume = () => {
                             </div>
                             <div className="col-lg-10">
                               <div className="row">
-                              <Box sx={{maxWidth:"120"}} className="dash-input-wrapper mb-25">
+                                <Box
+                                  sx={{ minWidth: 120 }}
+                                  className="dash-input-wrapper mb-25"
+                                >
                                   <FormControl fullWidth>
                                     <InputLabel id="demo-simple-select-label">
                                       From
@@ -821,7 +847,10 @@ const Resume = () => {
                                     </Select>
                                   </FormControl>
                                 </Box>
-                                <Box sx={{maxWidth:"120"}} className="dash-input-wrapper mb-25">
+                                <Box
+                                  sx={{ minWidth: 120 }}
+                                  className="dash-input-wrapper mb-25"
+                                >
                                   <FormControl fullWidth>
                                     <InputLabel id="demo-simple-select-label">
                                       To
@@ -906,11 +935,11 @@ const Resume = () => {
                               </div>
                             </div>
                           </div>
-                        </div>
-                      </div>
-                    </div>
+                        </AccordionDetails>
+                      
+                    </Accordion>
                   </div>
-                  <a href="#" className="dash-btn-one">
+                  <a style={{marginTop:"10px"}} href="#" className="dash-btn-one">
                     <i className="bi bi-plus"></i> Add more
                   </a>
                 </div>
