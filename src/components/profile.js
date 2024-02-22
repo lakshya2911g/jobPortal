@@ -167,9 +167,18 @@ const Profile = () => {
                     <button className="delete-btn tran3s">Delete</button>
                   </div>
                   <div className="dash-input-wrapper mb-30">
-                    <label for="">Full Name*</label>
-                    <input type="text" placeholder="Md James Brower" />
+                    <label for="">First Name*</label>
+                    <input type="text" placeholder="Md James" />
                   </div>
+                  <div className="dash-input-wrapper mb-30">
+                    <label for="">Last Name*</label>
+                    <input type="text" placeholder="Brower" />
+                  </div>
+                  <div className="dash-input-wrapper mb-30">
+                    <label for="">Contact No.*</label>
+                    <input type="text" placeholder="xxxxxxxxxx" />
+                  </div>
+                  
                   <div className="dash-input-wrapper">
                     <label for="">Bio*</label>
                     <textarea
@@ -208,7 +217,7 @@ const Profile = () => {
                       <div className="dash-input-wrapper mb-25">
                         <label for="">Address*</label>
                         <input
-                          style={{ border: "0.125px solid black" }}
+                          
                           type="text"
                           placeholder="Cowrasta, Chandana, Gazipur Sadar"
                         />
@@ -369,7 +378,7 @@ const Profile = () => {
                       <div className="col-lg-3">
                         <div className="dash-input-wrapper mb-25">
                           <label htmlFor="">Zip Code*</label>
-                          <input style={{ border: "0.125px solid black" }} type="number" placeholder="1708" />
+                          <input  type="number" placeholder="1708" />
                         </div>
                       </div>
                       <div className="col-lg-3">
@@ -450,7 +459,7 @@ const Profile = () => {
                         <label htmlFor="">Map Location*</label>
                         <div className="position-relative">
                           <input
-                            style={{ border: "0.125px solid black" }}
+                            
                             type="text"
                             placeholder="XC23+6XC, Moiran, N105"
                           />

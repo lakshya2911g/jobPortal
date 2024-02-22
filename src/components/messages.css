@@ -76,9 +76,9 @@ button {
   cursor: pointer;
 }
 [type="button"],
-button {
+/*button {
   -webkit-appearance: button;
-}
+}*/
 [type="button"]:not(:disabled),
 button:not(:disabled) {
   cursor: pointer;

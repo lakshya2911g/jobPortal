@@ -365,7 +365,7 @@ const Dashboard = () => {
         </div>
 
         <div style={{display:"flex", justifyContent:"center"}} className="row d-flex pt-50 lg-pt-10">
-          <Box style={{backgroundColor:"white", borderRadius:"20px", margin:"30px", width:"450px"}} className="col-xl-7 col-lg-6 d-flex flex-column">
+          <Box style={{backgroundColor:"white", borderRadius:"20px", margin:"30px", width:"400px"}} className="col-xl-7 col-lg-6 d-flex flex-column">
             <div className="user-activity-chart bg-white border-20 mt-30 h-100">
               <h4 className="dash-title-two">Profile Views</h4>
               <div className="ps-5 pe-5 mt-50">
@@ -388,7 +388,7 @@ const Dashboard = () => {
             </div>
           </Box>
 
-          <Box style={{backgroundColor:"white", borderRadius:"20px", margin:"30px", width:"450px"}} className="col-xl-5 col-lg-6 d-flex">
+          <Box style={{backgroundColor:"white", borderRadius:"20px", margin:"30px", width:"400px"}} className="col-xl-5 col-lg-6 d-flex">
             <div className="recent-job-tab bg-white border-20 mt-30 w-100">
               <h4 className="dash-title-two">Recent Applied Job</h4>
               <div className="wrapper">
