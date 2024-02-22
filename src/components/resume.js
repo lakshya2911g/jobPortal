@@ -32,10 +32,17 @@ const Resume = () => {
   };
 
   // year dropdown
-  const [content, setContent] = useState("");
+  
 
-  const handleContentChange = (event) => {
-    setContent(event.target.value);
+  const [fromContent, setFromContent] = useState('');
+  const [toContent, setToContent] = useState('');
+
+  const handleFromContentChange = (event) => {
+    setFromContent(event.target.value);
+  };
+
+  const handleToContentChange = (event) => {
+    setToContent(event.target.value);
   };
 
   return (
@@ -287,21 +294,22 @@ const Resume = () => {
                             <div className="row">
                               <Box
                                 sx={{ minWidth: 120 }}
+                                
                                 className="dash-input-wrapper mb-25"
                               >
                                 <FormControl fullWidth>
-                                  <InputLabel id="demo-simple-select-label">
+                                  <InputLabel id="demo-simple-select-label-from">
                                     From
                                   </InputLabel>
 
                                   <Select
                                     className="list"
                                     role="menubar"
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    value={content}
+                                    labelId="demo-simple-select-label-from"
+                                    id="demo-simple-select-from"
+                                    value={fromContent}
                                     label="From"
-                                    onChange={handleContentChange}
+                                    onChange={handleFromContentChange}
                                   >
                                     <MenuItem
                                       value={1}
@@ -360,63 +368,63 @@ const Resume = () => {
                                 className="dash-input-wrapper mb-25"
                               >
                                 <FormControl fullWidth>
-                                  <InputLabel id="demo-simple-select-label">
+                                  <InputLabel id="demo-simple-select-label-to">
                                     To
                                   </InputLabel>
 
                                   <Select
                                     className="list"
                                     role="menubar"
-                                    labelId="demo-simple-select-label"
-                                    id="demo-simple-select"
-                                    value={content}
+                                    labelId="demo-simple-select-label-to"
+                                    id="demo-simple-select-to"
+                                    value={toContent}
                                     label="To"
-                                    onChange={handleContentChange}
+                                    onChange={handleToContentChange}
                                   >
                                     <MenuItem
-                                      value={1}
+                                      value={11}
                                       className="option selected focus"
                                       role="menuitem"
                                     >
                                       2024
                                     </MenuItem>
                                     <MenuItem
-                                      value={2}
+                                      value={12}
                                       className="option false"
                                       role="menuitem"
                                     >
                                       2023
                                     </MenuItem>
                                     <MenuItem
-                                      value={3}
+                                      value={13}
                                       className="option false"
                                       role="menuitem"
                                     >
                                       2022
                                     </MenuItem>
                                     <MenuItem
-                                      value={4}
+                                      value={14}
                                       className="option false"
                                       role="menuitem"
                                     >
                                       2021
                                     </MenuItem>
                                     <MenuItem
-                                      value={5}
+                                      value={15}
                                       className="option false"
                                       role="menuitem"
                                     >
                                       2020
                                     </MenuItem>
                                     <MenuItem
-                                      value={6}
+                                      value={16}
                                       className="option false"
                                       role="menuitem"
                                     >
                                       2019
                                     </MenuItem>
                                     <MenuItem
-                                      dvalue={7}
+                                      dvalue={17}
                                       className="option false"
                                       role="menuitem"
                                     >
@@ -509,54 +517,54 @@ const Resume = () => {
                                     role="menubar"
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
-                                    value={content}
+                                    value={fromContent}
                                     label="From"
-                                    onChange={handleContentChange}
+                                    onChange={handleFromContentChange}
                                   >
                                     <MenuItem
-                                      value={1}
+                                      value={21}
                                       className="option selected focus"
                                       role="menuitem"
                                     >
                                       2024
                                     </MenuItem>
                                     <MenuItem
-                                      value={2}
+                                      value={22}
                                       className="option false"
                                       role="menuitem"
                                     >
                                       2023
                                     </MenuItem>
                                     <MenuItem
-                                      value={3}
+                                      value={23}
                                       className="option false"
                                       role="menuitem"
                                     >
                                       2022
                                     </MenuItem>
                                     <MenuItem
-                                      value={4}
+                                      value={24}
                                       className="option false"
                                       role="menuitem"
                                     >
                                       2021
                                     </MenuItem>
                                     <MenuItem
-                                      value={5}
+                                      value={25}
                                       className="option false"
                                       role="menuitem"
                                     >
                                       2020
                                     </MenuItem>
                                     <MenuItem
-                                      value={6}
+                                      value={26}
                                       className="option false"
                                       role="menuitem"
                                     >
                                       2019
                                     </MenuItem>
                                     <MenuItem
-                                      dvalue={7}
+                                      dvalue={27}
                                       className="option false"
                                       role="menuitem"
                                     >
@@ -579,54 +587,54 @@ const Resume = () => {
                                     role="menubar"
                                     labelId="demo-simple-select-label"
                                     id="demo-simple-select"
-                                    value={content}
+                                    value={toContent}
                                     label="To"
-                                    onChange={handleContentChange}
+                                    onChange={handleToContentChange}
                                   >
                                     <MenuItem
-                                      value={1}
+                                      value={31}
                                       className="option selected focus"
                                       role="menuitem"
                                     >
                                       2024
                                     </MenuItem>
                                     <MenuItem
-                                      value={2}
+                                      value={32}
                                       className="option false"
                                       role="menuitem"
                                     >
                                       2023
                                     </MenuItem>
                                     <MenuItem
-                                      value={3}
+                                      value={33}
                                       className="option false"
                                       role="menuitem"
                                     >
                                       2022
                                     </MenuItem>
                                     <MenuItem
-                                      value={4}
+                                      value={34}
                                       className="option false"
                                       role="menuitem"
                                     >
                                       2021
                                     </MenuItem>
                                     <MenuItem
-                                      value={5}
+                                      value={35}
                                       className="option false"
                                       role="menuitem"
                                     >
                                       2020
                                     </MenuItem>
                                     <MenuItem
-                                      value={6}
+                                      value={36}
                                       className="option false"
                                       role="menuitem"
                                     >
                                       2019
                                     </MenuItem>
                                     <MenuItem
-                                      dvalue={7}
+                                      dvalue={37}
                                       className="option false"
                                       role="menuitem"
                                     >
@@ -656,7 +664,7 @@ const Resume = () => {
                       </AccordionDetails>
                     </Accordion>
                   </div>
-                  <a href="#" className="dash-btn-one">
+                  <a  style={{marginTop:"10px"}} href="#" className="dash-btn-one">
                     <i className="bi bi-plus"></i> Add more
                   </a>
                 </div>
@@ -791,54 +799,54 @@ const Resume = () => {
                                       role="menubar"
                                       labelId="demo-simple-select-label"
                                       id="demo-simple-select"
-                                      value={content}
+                                      value={fromContent}
                                       label="From"
-                                      onChange={handleContentChange}
+                                      onChange={handleFromContentChange}
                                     >
                                       <MenuItem
-                                        value={1}
+                                        value={21}
                                         className="option selected focus"
                                         role="menuitem"
                                       >
                                         2024
                                       </MenuItem>
                                       <MenuItem
-                                        value={2}
+                                        value={22}
                                         className="option false"
                                         role="menuitem"
                                       >
                                         2023
                                       </MenuItem>
                                       <MenuItem
-                                        value={3}
+                                        value={23}
                                         className="option false"
                                         role="menuitem"
                                       >
                                         2022
                                       </MenuItem>
                                       <MenuItem
-                                        value={4}
+                                        value={24}
                                         className="option false"
                                         role="menuitem"
                                       >
                                         2021
                                       </MenuItem>
                                       <MenuItem
-                                        value={5}
+                                        value={25}
                                         className="option false"
                                         role="menuitem"
                                       >
                                         2020
                                       </MenuItem>
                                       <MenuItem
-                                        value={6}
+                                        value={26}
                                         className="option false"
                                         role="menuitem"
                                       >
                                         2019
                                       </MenuItem>
                                       <MenuItem
-                                        dvalue={7}
+                                        dvalue={27}
                                         className="option false"
                                         role="menuitem"
                                       >
@@ -861,9 +869,9 @@ const Resume = () => {
                                       role="menubar"
                                       labelId="demo-simple-select-label"
                                       id="demo-simple-select"
-                                      value={content}
+                                      value={toContent}
                                       label="To"
-                                      onChange={handleContentChange}
+                                      onChange={handleToContentChange}
                                     >
                                       <MenuItem
                                         value={1}
